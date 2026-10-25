@@ -1,6 +1,6 @@
 # Lenda da Brasa
 
-RPG de ação em pixel art no estilo Zelda clássico, ambientado no mundo de **Brasa Eterna**.
+Aventura clássica de ação em pixel art, ambientada no mundo de **Brasa Eterna**.
 O Rei Umbra raptou a Princesa Lírian. Atravesse os reinos da **Brasa**, das **Marés** e dos **Ventos**,
 conquiste os 3 cristais que libertam a **Espada dos Reinos** e depois busque os **8 Pendentes Celestiais**
 que abrem o caminho até o Reino Sombrio.
@@ -32,7 +32,7 @@ O jogo está completo, do começo ao final com créditos.
   - *Ruínas da Lua* (ao sul da Aldeia dos Ventos): 17 salas, **Martelo**, estacas e armaduras; Cavaleiro da Lua.
   - *Pico Estelar* (a oeste dos Campos de Flores): torre de 5 andares que exige todos os itens; Guardião Estelar.
   - Os portais dos santuários novos só reagem à Espada dos Reinos; o Pico Estelar pede os outros 7 Pendentes.
-- Movimento e ataque em **8 direções**, menu de itens no formato Zelda SNES, música de cada área,
+- Movimento e ataque em **8 direções**, menu de itens em grade no estilo dos clássicos de 16 bits, música de cada área,
   **3 espaços de salvamento**, suporte a **controle** e a **toque** no celular.
 
 ## Controles
