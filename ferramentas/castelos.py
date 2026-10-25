@@ -638,6 +638,7 @@ SIGNS = {
  'e14:12,9':['ANTESSALA DO NINHO. O Grifo espera além da porta grande.'],
 }
 
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'santuarios.py'), encoding='utf-8').read())
 # ---------------- validação e geração ----------------
 OPEN = set(",KLGSZzX")
 errs = []
@@ -717,6 +718,12 @@ for r in ROOMS.values():
     if 'lit' in r:
         l = r['lit']; x, y, what = l['chest']
         LIT[r['id']] = {'t': l['t'], 'open': [], 'chest': [x, y], 'f': 'lit_'+r['id'], 'msg': l['msg']}; CHESTS[f"{r['id']}:{x},{y}"] = what
+    if 'eyes' in r:
+        e = r['eyes']; d = {'open': [list(p) for p in e.get('open', [])], 'f': 'eye_' + r['id'], 'msg': e.get('msg', 'A PASSAGEM SE ABRIU!')}
+        if e.get('t'): d['t'] = e['t']
+        if e.get('chest'):
+            x, y, what = e['chest']; d['chest'] = [x, y]; CHESTS[f"{r['id']}:{x},{y}"] = what
+        EYES[r['id']] = d
     if 'blocks' in r: BLOCKS[r['id']] = {'open': [list(p) for p in r['blocks']], 'f': 'bl_'+r['id']}
     if 'trap' in r: TRAPS[r['id']] = {'waves': r['trap'], 'open': [list(p) for p in r.get('trapOpen', [])], 'f': 'tr_'+r['id']}
     if r.get('dark'): DARK.append(r['id'])
@@ -744,6 +751,30 @@ dg = {r['id']: [r['k'], r['fl'], r['gx'], r['gy']] for r in ROOMS.values()}
 dg.update({'d1': ['brasa', 0, 2, 0], 'c4': ['mares', 0, 2, 0], 'e4': ['ventos', 2, 2, 0]})
 out.append('const DGRID=' + js(dg) + ';')
 out.append('const CASTLE_SIGNS=' + js(SIGNS) + ';')
+# santuários II
+GATE_N2 = {}; GATE_X2 = {}; EXTRA2 = {}; RMAPS = {}; RDEF = {}
+OPPS = {'n': 's', 's': 'n', 'w': 'e', 'e': 'w'}
+for rid, g in REGIONS.items():
+    for i, row in enumerate(g['rows']): assert len(row) == 16, (rid, i, len(row))
+    RMAPS[rid] = g['rows']
+    RDEF[rid] = {'theme': g['theme'], 'k': ROOMS[g['entry']]['k'] if False else {'w21': 'brasa', 'w01': 'brasa', 'm00': 'mares', 'v00': 'ventos', 'v11': 'ventos', 'v10': 'ventos'}.get(g['parent'], 'brasa'),
+                 'name': g['name'], 'en': g['en'], 'mapAs': g['parent']}
+    EXTRA2.setdefault(rid, {})[g['side']] = g['parent']; EXTRA2.setdefault(g['parent'], {})[OPPS[g['side']]] = rid
+    py = [i for i, row in enumerate(g['rows']) if 'N' in row][0]; px = g['rows'][py].index('N')
+    GATE_N2[rid] = [g['entry'], 112, 128, 'up']
+    GATE_X2[g['entry']] = [rid, px * 16, (py + 1) * 16 + 4, 'down']
+for s_, d in SANCT2.items():
+    reg = d['exit'][0]; d['exit'] = GATE_X2[d['entry']]
+for rid in ROOMS:
+    k = ROOMS[rid]['k']
+    if k.startswith('sant_'):
+        ent = [d['entry'] for d in SANCT2.values() if d['k'] == k][0]
+        defs[rid]['home'] = [ent, 112, 128, 'up']; defs[rid]['s'] = [s_ for s_, d in SANCT2.items() if d['k'] == k][0]
+out[1] = 'const CASTLE_MAPS=' + js({**{r['id']: r['rows'] for r in ROOMS.values()}, **RMAPS}) + ';'
+out[2] = 'const CASTLE_DEF=' + js({**defs, **RDEF}) + ';'
+out.append('const SANCT2=' + js(SANCT2) + ';')
+out.append('const GATE_N2=' + js(GATE_N2) + ';const GATE_X2=' + js(GATE_X2) + ';const EXTRA2=' + js(EXTRA2) + ';')
+out.append('const EYES=' + js(EYES) + ';const PORTAL_REQ=' + js(PORTAL_REQ) + ';const SANCT_NAME=' + js(SANCT_NAME) + ';')
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src', 'castelos.js'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
 n = {}
 for r in ROOMS.values(): n[r['k']] = n.get(r['k'], 0) + 1

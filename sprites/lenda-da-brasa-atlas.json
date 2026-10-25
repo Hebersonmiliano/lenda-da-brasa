@@ -1856,6 +1856,1133 @@
    "w": 16,
    "h": 16,
    "grupo": "Masmorras — mecanismos"
+  },
+  "parede_sol": {
+   "x": 0,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_sol": {
+   "x": 16,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_trancada_sol": {
+   "x": 32,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_chefe_sol": {
+   "x": 48,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_sol": {
+   "x": 64,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "grade_fechada_sol": {
+   "x": 80,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "estatua_sol": {
+   "x": 96,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "tapete_sol": {
+   "x": 112,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "braseiro_apagado_sol": {
+   "x": 128,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "coluna_sol": {
+   "x": 144,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "ossos_sol": {
+   "x": 160,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "entulho_sol": {
+   "x": 176,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_sobe_sol": {
+   "x": 192,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_rachada_sol": {
+   "x": 208,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_molhado_sol": {
+   "x": 224,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_floresta": {
+   "x": 240,
+   "y": 512,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_floresta": {
+   "x": 0,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_trancada_floresta": {
+   "x": 16,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_chefe_floresta": {
+   "x": 32,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_floresta": {
+   "x": 48,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "grade_fechada_floresta": {
+   "x": 64,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "estatua_floresta": {
+   "x": 80,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "tapete_floresta": {
+   "x": 96,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "braseiro_apagado_floresta": {
+   "x": 112,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "coluna_floresta": {
+   "x": 128,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "ossos_floresta": {
+   "x": 144,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "entulho_floresta": {
+   "x": 160,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_sobe_floresta": {
+   "x": 176,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_rachada_floresta": {
+   "x": 192,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_molhado_floresta": {
+   "x": 208,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_sombra": {
+   "x": 224,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_sombra": {
+   "x": 240,
+   "y": 528,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_trancada_sombra": {
+   "x": 0,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_chefe_sombra": {
+   "x": 16,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_sombra": {
+   "x": 32,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "grade_fechada_sombra": {
+   "x": 48,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "estatua_sombra": {
+   "x": 64,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "tapete_sombra": {
+   "x": 80,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "braseiro_apagado_sombra": {
+   "x": 96,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "coluna_sombra": {
+   "x": 112,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "ossos_sombra": {
+   "x": 128,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "entulho_sombra": {
+   "x": 144,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_sobe_sombra": {
+   "x": 160,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_rachada_sombra": {
+   "x": 176,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_molhado_sombra": {
+   "x": 192,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_gelo": {
+   "x": 208,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_gelo": {
+   "x": 224,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_trancada_gelo": {
+   "x": 240,
+   "y": 544,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_chefe_gelo": {
+   "x": 0,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_gelo": {
+   "x": 16,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "grade_fechada_gelo": {
+   "x": 32,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "estatua_gelo": {
+   "x": 48,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "tapete_gelo": {
+   "x": 64,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "braseiro_apagado_gelo": {
+   "x": 80,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "coluna_gelo": {
+   "x": 96,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "ossos_gelo": {
+   "x": 112,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "entulho_gelo": {
+   "x": 128,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_sobe_gelo": {
+   "x": 144,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_rachada_gelo": {
+   "x": 160,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_molhado_gelo": {
+   "x": 176,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_lua": {
+   "x": 192,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_lua": {
+   "x": 208,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_trancada_lua": {
+   "x": 224,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_chefe_lua": {
+   "x": 240,
+   "y": 560,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_lua": {
+   "x": 0,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "grade_fechada_lua": {
+   "x": 16,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "estatua_lua": {
+   "x": 32,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "tapete_lua": {
+   "x": 48,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "braseiro_apagado_lua": {
+   "x": 64,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "coluna_lua": {
+   "x": 80,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "ossos_lua": {
+   "x": 96,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "entulho_lua": {
+   "x": 112,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_sobe_lua": {
+   "x": 128,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_rachada_lua": {
+   "x": 144,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_molhado_lua": {
+   "x": 160,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_estrela": {
+   "x": 176,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_estrela": {
+   "x": 192,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_trancada_estrela": {
+   "x": 208,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "porta_chefe_estrela": {
+   "x": 224,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_estrela": {
+   "x": 240,
+   "y": 576,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "grade_fechada_estrela": {
+   "x": 0,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "estatua_estrela": {
+   "x": 16,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "tapete_estrela": {
+   "x": 32,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "braseiro_apagado_estrela": {
+   "x": 48,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "coluna_estrela": {
+   "x": 64,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "ossos_estrela": {
+   "x": 80,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "entulho_estrela": {
+   "x": 96,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "escada_sobe_estrela": {
+   "x": 112,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_rachada_estrela": {
+   "x": 128,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "piso_molhado_estrela": {
+   "x": 144,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_bomba": {
+   "x": 160,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_bomba_sol": {
+   "x": 176,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_bomba_floresta": {
+   "x": 192,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_bomba_sombra": {
+   "x": 208,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_bomba_gelo": {
+   "x": 224,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_bomba_lua": {
+   "x": 240,
+   "y": 592,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_bomba_estrela": {
+   "x": 0,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_bomba_mares": {
+   "x": 16,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "parede_bomba_ventos": {
+   "x": 32,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "gelo": {
+   "x": 48,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "neve_0": {
+   "x": 64,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "pantano_g_0": {
+   "x": 80,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "floresta_g_0": {
+   "x": 96,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "neve_1": {
+   "x": 112,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "pantano_g_1": {
+   "x": 128,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "floresta_g_1": {
+   "x": 144,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "neve_2": {
+   "x": 160,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "pantano_g_2": {
+   "x": 176,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "floresta_g_2": {
+   "x": 192,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "pinheiro_neve": {
+   "x": 208,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "pedra_neve": {
+   "x": 224,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "arbusto_neve": {
+   "x": 240,
+   "y": 608,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "arbusto_neve_cortado": {
+   "x": 0,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "arvore_pantano": {
+   "x": 16,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "arvore_floresta": {
+   "x": 32,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "pedra_pantano": {
+   "x": 48,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "arbusto_pantano": {
+   "x": 64,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "arbusto_pantano_cortado": {
+   "x": 80,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "flores_pantano": {
+   "x": 96,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "pedra_floresta": {
+   "x": 112,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "arbusto_floresta": {
+   "x": 128,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "arbusto_floresta_cortado": {
+   "x": 144,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "flores_floresta": {
+   "x": 160,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "pantano_0": {
+   "x": 176,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "pantano_1": {
+   "x": 192,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "flores_neve": {
+   "x": 208,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "cacto": {
+   "x": 224,
+   "y": 624,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — cenário"
+  },
+  "olho_alvo": {
+   "x": 0,
+   "y": 640,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — objetos"
+  },
+  "olho_fechado": {
+   "x": 16,
+   "y": 640,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — objetos"
+  },
+  "estaca": {
+   "x": 32,
+   "y": 640,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — objetos"
+  },
+  "rocha_rachada": {
+   "x": 48,
+   "y": 640,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — objetos"
+  },
+  "bomba": {
+   "x": 64,
+   "y": 640,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — objetos"
+  },
+  "bomba_1": {
+   "x": 80,
+   "y": 640,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — objetos"
+  },
+  "martelo": {
+   "x": 96,
+   "y": 640,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — objetos"
+  },
+  "cavaleiro_prata_0": {
+   "x": 0,
+   "y": 656,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — inimigos"
+  },
+  "cavaleiro_prata_1": {
+   "x": 16,
+   "y": 656,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — inimigos"
+  },
+  "cavaleiro_prata_dano": {
+   "x": 32,
+   "y": 656,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — inimigos"
+  },
+  "cavaleiro_prata_quebrado": {
+   "x": 48,
+   "y": 656,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários II — inimigos"
+  },
+  "escorpiao_0": {
+   "x": 64,
+   "y": 656,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "escorpiao_1": {
+   "x": 96,
+   "y": 656,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "escorpiao_tonto": {
+   "x": 128,
+   "y": 656,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "escorpiao_dano": {
+   "x": 160,
+   "y": 656,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "flor_fechada": {
+   "x": 192,
+   "y": 656,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "flor_aberta": {
+   "x": 224,
+   "y": 656,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "flor_murcha": {
+   "x": 0,
+   "y": 688,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "flor_dano": {
+   "x": 32,
+   "y": 688,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "espectro_0": {
+   "x": 64,
+   "y": 688,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "espectro_1": {
+   "x": 96,
+   "y": 688,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "espectro_dano": {
+   "x": 128,
+   "y": 688,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "yeti_0": {
+   "x": 160,
+   "y": 688,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "yeti_1": {
+   "x": 192,
+   "y": 688,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "yeti_congelado": {
+   "x": 224,
+   "y": 688,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "yeti_dano": {
+   "x": 0,
+   "y": 720,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "cavaleiro_lua": {
+   "x": 32,
+   "y": 720,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "cavaleiro_lua_1": {
+   "x": 64,
+   "y": 720,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "cavaleiro_lua_sem": {
+   "x": 96,
+   "y": 720,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "cavaleiro_lua_dano": {
+   "x": 128,
+   "y": 720,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "guardiao_estelar": {
+   "x": 160,
+   "y": 720,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "guardiao_estelar_1": {
+   "x": 192,
+   "y": 720,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "guardiao_estelar_fechado": {
+   "x": 224,
+   "y": 720,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
+  },
+  "guardiao_estelar_dano": {
+   "x": 0,
+   "y": 752,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários II — inimigos"
   }
  }
 }

@@ -645,9 +645,163 @@ def cwall(R,blob,s):
 mech['parede_rachada']=tile(cwall)
 for n in ('coluna','ossos','entulho','escada_sobe','parede_rachada','piso_molhado'):
     mech[n+'_mares']=remap(mech[n],{**SEA_IN,**SEA_OUT}); mech[n+'_ventos']=remap(mech[n],{**SKY_IN})
+
+# =============== SANTUÁRIOS II — temas, regiões, mecanismos e mini-chefes ===============
+tiles_s2={}; enemies_s2={}
+CASTLE_IN=['#2b2225','#1b1517','#3d3134','#3a2e30','#43373a','#2f2528']
+CASTLE_OUT=['#6a2a1a','#8a3a24','#3e160c','#e0402a','#e06a24','#5a1e0e']
+THEMES={  # parede, paredeD, paredeL, piso, pisoL, pisoD | acentos (tijolo, tijoloL, tijoloD, vermelho, brasa, escuro)
+ 'sol':    (['#8a6a3a','#5e4626','#a8864e','#c8a466','#d6b478','#b08e52'],['#8a5a20','#b07a30','#5a3a14','#e8b04a','#ffd27a','#7a5a1e']),
+ 'floresta':(['#2e4a2a','#1e321c','#3e5e36','#4a5a34','#56683c','#3e4c2c'],['#3a5a2a','#5a7a3a','#22381a','#8fc06a','#b8e07a','#2a4a1e']),
+ 'sombra': (['#2a2238','#1a1424','#3a3050','#302840','#3a3050','#262036'],['#4a2a5a','#6a3a7a','#2a1636','#a87ac8','#d8b4f0','#3a1e4a']),
+ 'gelo':   (['#6a8aa8','#4a6280','#8aaac8','#b8d0e0','#cfe0ec','#a0b8cc'],['#4a7aa0','#6a9ac0','#2e5070','#8ad4e8','#e0f4ff','#3a6a8a']),
+ 'lua':    (['#3a3a5a','#26263e','#4e4e72','#5a5a7a','#68688a','#4c4c6a'],['#4a4a70','#6a6a98','#2a2a48','#c8c8e8','#efefff','#3a3a5e']),
+ 'estrela':(['#1e2448','#121630','#2e3866','#262e58','#303a6a','#1e2448'],['#3a3a7a','#5a5aa0','#1a1a48','#e8b04a','#ffe08a','#2a2a6a']),
+}
+for nm,(ins,outs) in THEMES.items():
+    m={**dict(zip(CASTLE_IN,ins)),**dict(zip(CASTLE_OUT,outs))}
+    for a,b in (('parede_castelo','parede'),('piso_castelo','piso'),('porta_trancada','porta_trancada'),('porta_chefe','porta_chefe'),
+                ('escada','escada'),('grade_fechada','grade_fechada'),('estatua_guardia','estatua'),('tapete_real','tapete'),('braseiro_apagado','braseiro_apagado')):
+        tiles_s2[f'{b}_{nm}']=remap(tiles[a],m)
+    for n in ('coluna','ossos','entulho','escada_sobe','parede_rachada','piso_molhado'):
+        tiles_s2[f'{n}_{nm}']=remap(mech[n],m)
+# parede que só abre com bomba (rachadura grande)
+def bwall(R,blob,s):
+    wall(R,blob,s);R(3,2,10,12,'wallD');R(5,4,6,8,'black');R(4,5,1,6,'black');R(11,6,1,4,'black');R(6,3,4,1,'black');R(7,12,3,1,'black');R(2,9,1,1,'wallL');R(13,3,1,1,'wallL')
+tiles_s2['parede_bomba']=tile(bwall)
+for nm,(ins,outs) in THEMES.items(): tiles_s2[f'parede_bomba_{nm}']=remap(tiles_s2['parede_bomba'],dict(zip(CASTLE_IN,ins)))
+for suf,mm in (('_mares',{**SEA_IN,**SEA_OUT}),('_ventos',SKY_IN)): tiles_s2['parede_bomba'+suf]=remap(tiles_s2['parede_bomba'],mm)
+def ice(R,blob,s):
+    R(0,0,16,16,(168,214,236,255));R(0,0,16,1,(214,240,252,255));R(0,15,16,1,(120,170,200,255));R(2,3,5,1,(236,250,255,255));R(9,9,4,1,(236,250,255,255));R(10,10,1,2,(200,232,248,255));R(3,11,2,1,(140,190,220,255))
+tiles_s2['gelo']=tile(ice)
+# mecanismos (sobreposições transparentes)
+im,R=canvas();R(3,3,10,10,'k');R(4,4,8,8,'w');R(4,4,8,1,'g');R(6,6,4,4,'r');R(7,7,2,2,'k');R(6,6,1,1,'W');R(2,7,1,2,'k');R(13,7,1,2,'k');objs_s2={}
+objs_s2['olho_alvo']=im
+im,R=canvas();R(3,3,10,10,'k');R(4,7,8,2,'R');R(4,6,8,1,'k');R(4,9,8,1,'k');R(5,8,6,1,'y');objs_s2['olho_fechado']=im
+im,R=canvas();R(5,1,6,14,'k');R(6,2,4,12,'n');R(6,2,1,12,'W');R(5,1,6,3,'A');R(6,1,4,2,'a');R(4,13,8,2,'N');R(9,5,1,6,'N');objs_s2['estaca']=im
+im,R=canvas();R(1,2,14,13,'k');R(2,3,12,11,'A');R(2,3,12,3,'a');R(3,4,4,2,'G');R(7,6,1,4,'k');R(8,9,3,1,'k');R(5,9,2,1,'k');R(10,4,1,3,'k');objs_s2['rocha_rachada']=im
+im=Image.new('RGBA',(16,16),(0,0,0,0));d=ImageDraw.Draw(im);d.ellipse([2,4,13,15],fill=PAL['k']);d.ellipse([3,5,12,14],fill=(40,44,70,255));d.ellipse([4,6,7,9],fill=(110,120,160,255));d.rectangle([7,1,8,4],fill=PAL['n']);d.point((9,1),fill=PAL['Y']);d.point((10,0),fill=PAL['o'])
+objs_s2['bomba']=im; objs_s2['bomba_1']=recolor(im,{'n':'r'})
+px=objs_s2['bomba_1'].load()
+for y in range(16):
+    for x in range(16):
+        if px[x,y]==(40,44,70,255): px[x,y]=(160,40,30,255)
+im,R=canvas();R(1,3,14,7,'k');R(2,4,12,5,'A');R(2,4,12,2,'a');R(2,4,1,5,'G');R(7,9,2,7,'k');R(7,10,1,5,'n');objs_s2['martelo']=im
+# regiões externas
+G_IN=['#5f6e3a','#4c5a2e','#7a8a44']; LEAF=['#8a3a1c','#c4602a','#5a2412']; BUSH=['#6e7c32','#94a244','#3e4a1c']; ROCK=['#7a7068','#9a8f84','#4a423e']; WAT=['#2d5668','#5a8ea0']
+def rm(img,src,dst): return remap(img,dict(zip(src,dst)))
+SNOW=['#dfe8f0','#b8c8d8','#f4f8fc']; SWAMP=['#3a4a34','#2a3626','#4a5e3e']; FOREST=['#3e5a2a','#2e4620','#527236']
+for i in range(3):
+    tiles_s2[f'neve_{i}']=rm(tiles[f'grama_{i}'],G_IN,SNOW); tiles_s2[f'pantano_g_{i}']=rm(tiles[f'grama_{i}'],G_IN,SWAMP); tiles_s2[f'floresta_g_{i}']=rm(tiles[f'grama_{i}'],G_IN,FOREST)
+tiles_s2['pinheiro_neve']=remap(tiles_v['pinheiro'],{}) ; pn=tiles_s2['pinheiro_neve'].load()
+tiles_s2['pedra_neve']=rm(rm(tiles['pedra'],G_IN,SNOW),ROCK,['#8a96a4','#c4ccd8','#5a6470'])
+tiles_s2['arbusto_neve']=rm(rm(tiles['arbusto'],G_IN,SNOW),BUSH,['#6a8a7a','#9ab8a8','#3e5a4e']); tiles_s2['arbusto_neve_cortado']=rm(rm(tiles['arbusto_cortado'],G_IN,SNOW),BUSH,['#6a8a7a','#9ab8a8','#3e5a4e'])
+tiles_s2['arvore_pantano']=rm(rm(tiles['arvore_outono'],G_IN,SWAMP),LEAF,['#3a3a2a','#5a5a3a','#22221a'])
+tiles_s2['arvore_floresta']=rm(rm(tiles['arvore_outono'],G_IN,FOREST),LEAF,['#2e6a2a','#4a9a3a','#1a3e1a'])
+for nm,dst in (('pantano',SWAMP),('floresta',FOREST)):
+    tiles_s2[f'pedra_{nm}']=rm(tiles['pedra'],G_IN,dst); tiles_s2[f'arbusto_{nm}']=rm(tiles['arbusto'],G_IN,dst); tiles_s2[f'arbusto_{nm}_cortado']=rm(tiles['arbusto_cortado'],G_IN,dst)
+    tiles_s2[f'flores_{nm}']=rm(tiles['grama_flores'],G_IN,dst)
+for f in range(2): tiles_s2[f'pantano_{f}']=rm(tiles[f'agua_{f}'],WAT,['#3a4a3a','#5a6e52'])
+tiles_s2['flores_neve']=rm(tiles['grama_flores'],G_IN,SNOW)
+def cactus(R,blob,s):
+    sand(R,blob,s);R(6,2,4,13,(52,110,58,255));R(7,2,2,13,(86,150,80,255));R(2,5,3,6,(52,110,58,255));R(3,5,1,5,(86,150,80,255));R(11,4,3,5,(52,110,58,255));R(12,4,1,4,(86,150,80,255));R(4,9,3,2,(52,110,58,255));R(9,7,3,2,(52,110,58,255))
+tiles_s2['cacto']=tile(cactus)
+# pinheiro com neve: pinta o topo de branco
+pn=tiles_s2['pinheiro_neve']
+pp=pn.load()
+for y in range(16):
+    for x in range(16):
+        c=pp[x,y]
+        if c[3] and y<12 and (c[1]>c[0]+20) and (x+y)%3==0: pp[x,y]=(236,244,250,255)
+# cavaleiro de prata (armadura que só o martelo quebra)
+for a,b in (('cavaleiro_magma_0','cavaleiro_prata_0'),('cavaleiro_magma_1','cavaleiro_prata_1'),('cavaleiro_magma_dano','cavaleiro_prata_dano')):
+    enemies_s2[b]=recolor(enemies[a],{'x':'G','X':'P','e':'c','E':'w','Y':'c'})
+enemies_s2['cavaleiro_prata_quebrado']=recolor(enemies['cavaleiro_magma_0'],{'x':'d','X':'i','e':'r','E':'Y'})
+# --------- mini-chefes 32x32 ---------
+def big():
+    im=Image.new('RGBA',(32,32),(0,0,0,0)); return im,ImageDraw.Draw(im)
+def P_(c): return PAL[c] if isinstance(c,str) else c
+def ell(d,b,c,o='k'): d.ellipse(b,fill=P_(c),outline=P_(o))
+# Escorpião Dourado
+def scorpion(ph=0,daze=False):
+    im,d=big(); body='y' if not daze else (200,170,90,255); dark='o'
+    for i,yy in enumerate((24,19,14,9)):
+        x0=13+i%2+ (ph if i==3 else 0); ell(d,[x0-3,yy-4,x0+5,yy+3],body)
+    d.polygon([(17,2),(21,5),(17,7)],fill=P_('k'));d.polygon([(17,3),(20,5),(17,6)],fill=P_('r'))
+    ell(d,[7,18,25,30],body); d.rectangle([10,22,22,23],fill=P_(dark))
+    for side in (0,1):
+        sx=4 if side==0 else 22
+        ell(d,[sx-2,13,sx+6,20],body); d.line([(sx+2,20),(sx+3+(2 if side else -2),24)],fill=P_('k'),width=2)
+        for j in range(3): d.line([(9 if side==0 else 23, 24+j*2),(4 if side==0 else 28, 25+j*2+ph)],fill=P_('k'),width=1)
+    eye='w' if not daze else 'Y'
+    d.rectangle([12,25,13,26],fill=P_('k'));d.rectangle([19,25,20,26],fill=P_('k'));d.point((12,25),fill=P_(eye));d.point((19,25),fill=P_(eye))
+    return im
+enemies_s2['escorpiao_0']=scorpion(0);enemies_s2['escorpiao_1']=scorpion(1);enemies_s2['escorpiao_tonto']=scorpion(0,True);enemies_s2['escorpiao_dano']=flash(scorpion(0))
+# Flor Carnívora
+def flower(state):
+    im,d=big()
+    d.rectangle([14,20,17,31],fill=P_('k'));d.rectangle([15,20,16,31],fill=(60,120,50,255))
+    for (x,y) in ((4,24),(22,24)): ell(d,[x,y,x+7,y+5],(70,140,60,255))
+    if state=='fechada':
+        ell(d,[6,4,25,23],'Q'); d.line([(15,5),(15,22)],fill=P_('k'),width=1)
+        for i in range(4): d.point((10+i*4,8+i%2*6),fill=P_('O'))
+    elif state=='aberta':
+        ell(d,[3,2,28,24],'Q'); ell(d,[8,7,23,20],(60,10,20,255),'R')
+        for i in range(5): d.polygon([(9+i*3,8),(10+i*3,11),(11+i*3,8)],fill=P_('w'));d.polygon([(9+i*3,19),(10+i*3,16),(11+i*3,19)],fill=P_('w'))
+    else:
+        ell(d,[7,10,24,26],(140,90,110,255)); d.line([(10,16),(21,20)],fill=P_('k'));d.line([(10,20),(21,16)],fill=P_('k'))
+    return im
+for st in ('fechada','aberta','murcha'): enemies_s2['flor_'+st]=flower(st)
+enemies_s2['flor_dano']=flash(flower('aberta'))
+# Espectro
+def specter(ph=0,a=255):
+    im,d=big()
+    d.ellipse([6,2,26,24],fill=(200,190,240,a),outline=(40,30,60,a))
+    d.polygon([(6,13),(26,13),(27,29),(23,25+ph),(19,30),(15,26-ph),(11,30),(8,25),(5,29)],fill=(200,190,240,a),outline=(40,30,60,a))
+    d.ellipse([10,9,14,14],fill=(20,10,40,a));d.ellipse([18,9,22,14],fill=(20,10,40,a));d.point((12,11),fill=(255,80,120,a));d.point((20,11),fill=(255,80,120,a))
+    d.ellipse([13,16,19,21],fill=(20,10,40,a))
+    return im
+enemies_s2['espectro_0']=specter(0);enemies_s2['espectro_1']=specter(2);enemies_s2['espectro_dano']=flash(specter(0))
+# Yeti
+def yeti(ph=0,frozen=False):
+    im,d=big(); fur=(236,240,248,255); furD=(170,186,206,255)
+    ell(d,[5,6,27,30],fur); ell(d,[9,1,23,15],fur)
+    d.rectangle([11,6,21,12],fill=(120,150,190,255)); d.rectangle([12,8,14,9],fill=P_('k'));d.rectangle([18,8,20,9],fill=P_('k'))
+    d.rectangle([13,11,19,12],fill=P_('w'))
+    ell(d,[1,12+ph,9,24+ph],fur);ell(d,[23,12-ph,31,24-ph],fur)
+    d.rectangle([9,27,14,31],fill=furD,outline=P_('k'));d.rectangle([18,27,23,31],fill=furD,outline=P_('k'))
+    for (x,y) in ((10,18),(20,20),(15,24)): d.point((x,y),fill=furD)
+    if frozen:
+        ov=Image.new('RGBA',(32,32),(0,0,0,0));od=ImageDraw.Draw(ov);od.rectangle([1,0,31,31],fill=(120,200,240,110),outline=(200,240,255,255));im=Image.alpha_composite(im,ov)
+    return im
+enemies_s2['yeti_0']=yeti(0);enemies_s2['yeti_1']=yeti(2);enemies_s2['yeti_congelado']=yeti(0,True);enemies_s2['yeti_dano']=flash(yeti(0))
+# Cavaleiro da Lua
+def moonknight(armor=True,ph=0):
+    im,d=big(); m1=(196,200,230,255) if armor else (110,90,130,255); m2=(140,146,190,255) if armor else (80,60,100,255)
+    ell(d,[8,2,24,16],m1); d.rectangle([11,8,21,10],fill=P_('k')); d.point((14,9),fill=P_('c'));d.point((18,9),fill=P_('c'))
+    d.polygon([(16,0),(19,4),(16,3),(13,4)],fill=P_('y'))
+    d.rectangle([8,15,24,27],fill=m2,outline=P_('k')); d.rectangle([10,16,22,20],fill=m1)
+    d.ellipse([13,17,19,23],fill=P_('Y') if armor else (90,70,110,255),outline=P_('k'))
+    d.rectangle([9,27,14,31],fill=m2,outline=P_('k'));d.rectangle([18,27,23,31],fill=m2,outline=P_('k'))
+    d.rectangle([25,4-ph,27,26-ph],fill=P_('G'),outline=P_('k')); d.rectangle([23,20-ph,29,22-ph],fill=P_('y'))
+    if armor: d.ellipse([1,12,10,28],fill=m1,outline=P_('k')); d.ellipse([3,16,8,24],fill=P_('Y'))
+    return im
+enemies_s2['cavaleiro_lua']=moonknight(True);enemies_s2['cavaleiro_lua_1']=moonknight(True,2);enemies_s2['cavaleiro_lua_sem']=moonknight(False);enemies_s2['cavaleiro_lua_dano']=flash(moonknight(True))
+# Guardião Estelar
+def starguard(eye=True,ph=0):
+    im,d=big()
+    pts=[]
+    import math
+    for i in range(10):
+        r=15 if i%2==0 else 8; a=-math.pi/2+i*math.pi/5+ph*0.1; pts.append((16+r*math.cos(a),16+r*math.sin(a)))
+    d.polygon(pts,fill=P_('y'),outline=P_('k')); d.ellipse([9,9,23,23],fill=P_('Y'),outline=P_('k'))
+    if eye: d.ellipse([11,12,21,20],fill=P_('w'),outline=P_('k')); d.ellipse([14,13,18,19],fill=P_('u')); d.point((16,15),fill=P_('k'))
+    else: d.line([(11,16),(21,16)],fill=P_('k'),width=2)
+    return im
+enemies_s2['guardiao_estelar']=starguard(True);enemies_s2['guardiao_estelar_1']=starguard(True,1);enemies_s2['guardiao_estelar_fechado']=starguard(False);enemies_s2['guardiao_estelar_dano']=flash(starguard(True))
 # =============== MONTAGEM DA FOLHA ===============
 SECTIONS=[('Herói — Lume',{**hero_sprites,**weapons}),('Herói — ataques',attack),('Inimigos',enemies),('Chefe',bosses),
-          ('Personagens',chars),('Objetos e itens',objs),('Cenário — Reino da Brasa',tiles),('Inimigos — Marés',enemies_m),('Chefe — Kraken',bosses_m),('Personagens — Marés',chars_m),('Cenário — Reino das Marés',tiles_m),('Inimigos — Ventos',enemies_v),('Chefe — Grifo',bosses_v),('Personagens e espada — Ventos',chars_v),('Cenário — Reino dos Ventos',tiles_v),('Santuários — mini-chefes',enemies_s),('Santuários — cenário',tiles_s),('Masmorras — mecanismos',mech)]
+          ('Personagens',chars),('Objetos e itens',objs),('Cenário — Reino da Brasa',tiles),('Inimigos — Marés',enemies_m),('Chefe — Kraken',bosses_m),('Personagens — Marés',chars_m),('Cenário — Reino das Marés',tiles_m),('Inimigos — Ventos',enemies_v),('Chefe — Grifo',bosses_v),('Personagens e espada — Ventos',chars_v),('Cenário — Reino dos Ventos',tiles_v),('Santuários — mini-chefes',enemies_s),('Santuários — cenário',tiles_s),('Masmorras — mecanismos',mech),('Santuários II — cenário',tiles_s2),('Santuários II — objetos',objs_s2),('Santuários II — inimigos',enemies_s2)]
 if BAD:
     for b in BAD: print('LINHA COM TAMANHO ERRADO:',b)
 SHEET_W=256
@@ -709,7 +863,7 @@ prev.convert('RGB').save(os.path.join(OUT,'lenda-da-brasa-preview.png'))
 with zipfile.ZipFile(os.path.join(OUT,'lenda-da-brasa-sprites.zip'),'w',zipfile.ZIP_DEFLATED) as z:
     z.write(os.path.join(OUT,'lenda-da-brasa-sprites.png'),'lenda-da-brasa-sprites.png')
     z.write(os.path.join(OUT,'lenda-da-brasa-atlas.json'),'lenda-da-brasa-atlas.json')
-    pastas={'Herói — Lume':'heroi','Herói — ataques':'heroi','Inimigos':'inimigos','Chefe':'chefe','Personagens':'personagens','Objetos e itens':'objetos','Cenário — Reino da Brasa':'cenario','Inimigos — Marés':'mares/inimigos','Chefe — Kraken':'mares/chefe','Personagens — Marés':'mares/personagens','Cenário — Reino das Marés':'mares/cenario','Inimigos — Ventos':'ventos/inimigos','Chefe — Grifo':'ventos/chefe','Personagens e espada — Ventos':'ventos/personagens','Cenário — Reino dos Ventos':'ventos/cenario','Santuários — mini-chefes':'santuarios/inimigos','Santuários — cenário':'santuarios/cenario','Masmorras — mecanismos':'masmorras'}
+    pastas={'Herói — Lume':'heroi','Herói — ataques':'heroi','Inimigos':'inimigos','Chefe':'chefe','Personagens':'personagens','Objetos e itens':'objetos','Cenário — Reino da Brasa':'cenario','Inimigos — Marés':'mares/inimigos','Chefe — Kraken':'mares/chefe','Personagens — Marés':'mares/personagens','Cenário — Reino das Marés':'mares/cenario','Inimigos — Ventos':'ventos/inimigos','Chefe — Grifo':'ventos/chefe','Personagens e espada — Ventos':'ventos/personagens','Cenário — Reino dos Ventos':'ventos/cenario','Santuários — mini-chefes':'santuarios/inimigos','Santuários — cenário':'santuarios/cenario','Masmorras — mecanismos':'masmorras','Santuários II — cenário':'santuarios2/cenario','Santuários II — objetos':'santuarios2/objetos','Santuários II — inimigos':'santuarios2/inimigos'}
     for title,group in SECTIONS:
         for name,img in group.items():
             b=io.BytesIO(); img.save(b,'PNG'); z.writestr(f'{pastas[title]}/{name}.png',b.getvalue())
