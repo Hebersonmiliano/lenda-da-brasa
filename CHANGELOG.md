@@ -1,5 +1,8 @@
 # Novidades — Lenda da Brasa
 
+## v1.5.1 — Câmara da Lua Cheia
+- **Ruínas da Lua, Câmara da Lua Cheia**: depois de pegar a Chave Mestra, o herói ficava preso do lado esquerdo, atrás dos pinos laranja, porque o único orbe ficava do outro lado. Agora há um segundo orbe do lado esquerdo: é só bater nele com a espada.
+
 ## v1.5 — Correções
 - O **Escudo de Ferro** agora aparece prateado no menu de equipamentos, diferente do escudo comum.
 - **Câmara da Pena** (Castelo dos Ventos): quem subia pela escada com os pinos laranja levantados ficava preso no cercado em volta dela. Agora, se você chega cercado por pinos sem um orbe por perto, os pinos abaixam sozinhos.
