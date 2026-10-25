@@ -8,6 +8,8 @@ que abrem o caminho até o Reino Sombrio.
 **Jogar:** abra `index.html` no navegador (funciona com dois cliques, sem instalar nada)
 ou jogue no [Portal Pixel](https://hebersonmiliano.github.io/portal-jogos/jogo.html?id=lenda-da-brasa).
 
+📖 **[Guia completo com fotos](GUIA.md)**: rota de cada castelo e santuário, itens, chefes e segredos.
+
 ![Capa](capa.png)
 
 ## O que já dá para jogar
@@ -53,6 +55,7 @@ ferramentas/santuarios.py      desenho das salas e regiões dos 6 santuários no
 ferramentas/gerar_brasa.py     gera todos os sprites em pixel art
 ferramentas/build.py           monta o index.html
 sprites/                       folha, atlas e prévia ampliada dos sprites
+GUIA.md e guia/                guia completo do jogo, com fotos
 ```
 
 ## Como atualizar
