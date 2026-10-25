@@ -1,0 +1,1861 @@
+{
+ "imagem": "lenda-da-brasa-sprites.png",
+ "tile": 16,
+ "sprites": {
+  "heroi_baixo_0": {
+   "x": 0,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_baixo_1": {
+   "x": 16,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_baixo_2": {
+   "x": 32,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_baixo_3": {
+   "x": 48,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_cima_0": {
+   "x": 64,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_cima_1": {
+   "x": 80,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_cima_2": {
+   "x": 96,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_cima_3": {
+   "x": 112,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_direita_0": {
+   "x": 128,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_esquerda_0": {
+   "x": 144,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_direita_1": {
+   "x": 160,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_esquerda_1": {
+   "x": 176,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_direita_2": {
+   "x": 192,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_esquerda_2": {
+   "x": 208,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_direita_3": {
+   "x": 224,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_esquerda_3": {
+   "x": 240,
+   "y": 0,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_ataque_baixo": {
+   "x": 0,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_ataque_cima": {
+   "x": 16,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_ataque_direita": {
+   "x": 32,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_ataque_esquerda": {
+   "x": 48,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_pega_item": {
+   "x": 64,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "heroi_dano": {
+   "x": 80,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "espada_cima": {
+   "x": 96,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "espada_baixo": {
+   "x": 112,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "espada_direita": {
+   "x": 128,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "espada_esquerda": {
+   "x": 144,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "espada_diagonal": {
+   "x": 160,
+   "y": 16,
+   "w": 16,
+   "h": 16,
+   "grupo": "Herói — Lume"
+  },
+  "ataque_baixo": {
+   "x": 0,
+   "y": 32,
+   "w": 16,
+   "h": 32,
+   "grupo": "Herói — ataques"
+  },
+  "ataque_cima": {
+   "x": 16,
+   "y": 32,
+   "w": 16,
+   "h": 32,
+   "grupo": "Herói — ataques"
+  },
+  "ataque_direita": {
+   "x": 32,
+   "y": 32,
+   "w": 32,
+   "h": 16,
+   "grupo": "Herói — ataques"
+  },
+  "ataque_esquerda": {
+   "x": 64,
+   "y": 32,
+   "w": 32,
+   "h": 16,
+   "grupo": "Herói — ataques"
+  },
+  "brasinha_0": {
+   "x": 0,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "brasinha_1": {
+   "x": 16,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "cinza_viva_0": {
+   "x": 32,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "cinza_viva_1": {
+   "x": 48,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "brasinha_pulo": {
+   "x": 64,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "brasinha_dano": {
+   "x": 80,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "morcego_0": {
+   "x": 96,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "morcego_1": {
+   "x": 112,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "morcego_dano": {
+   "x": 128,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "cuspidor_frente": {
+   "x": 144,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "cuspidor_costas": {
+   "x": 160,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "cuspidor_atira": {
+   "x": 176,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "cuspidor_dano": {
+   "x": 192,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "cavaleiro_magma_0": {
+   "x": 208,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "cavaleiro_magma_1": {
+   "x": 224,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "cavaleiro_magma_dano": {
+   "x": 240,
+   "y": 64,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "bola_de_fogo": {
+   "x": 0,
+   "y": 80,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "onda_de_brasa": {
+   "x": 16,
+   "y": 80,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos"
+  },
+  "guardiao_cinzas": {
+   "x": 0,
+   "y": 96,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe"
+  },
+  "guardiao_0": {
+   "x": 32,
+   "y": 96,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe"
+  },
+  "guardiao_1": {
+   "x": 64,
+   "y": 96,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe"
+  },
+  "guardiao_furia": {
+   "x": 96,
+   "y": 96,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe"
+  },
+  "guardiao_dano": {
+   "x": 128,
+   "y": 96,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe"
+  },
+  "princesa_lirian": {
+   "x": 0,
+   "y": 128,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens"
+  },
+  "princesa_lirian_1": {
+   "x": 16,
+   "y": 128,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens"
+  },
+  "anciao_0": {
+   "x": 32,
+   "y": 128,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens"
+  },
+  "anciao_1": {
+   "x": 48,
+   "y": 128,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens"
+  },
+  "soldado_reino": {
+   "x": 64,
+   "y": 128,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens"
+  },
+  "vaso": {
+   "x": 0,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "vaso_quebrado": {
+   "x": 16,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "placa": {
+   "x": 32,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "tocha_0": {
+   "x": 48,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "tocha_1": {
+   "x": 64,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "tocha_2": {
+   "x": 80,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "bloco_empurrar": {
+   "x": 96,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "interruptor_off": {
+   "x": 112,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "interruptor_on": {
+   "x": 128,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "chave": {
+   "x": 144,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "chave_mestra": {
+   "x": 160,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "coracao_cheio": {
+   "x": 176,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "coracao_meio": {
+   "x": 192,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "coracao_vazio": {
+   "x": 208,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "recipiente_coracao": {
+   "x": 224,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "brasa": {
+   "x": 240,
+   "y": 144,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "brasa_grande": {
+   "x": 0,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "cristal_brasa": {
+   "x": 16,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "cristal_mares": {
+   "x": 32,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "cristal_ventos": {
+   "x": 48,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "pendente_sol": {
+   "x": 64,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "pendente_fogo": {
+   "x": 80,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "pendente_mar": {
+   "x": 96,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "pendente_floresta": {
+   "x": 112,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "pendente_sombra": {
+   "x": 128,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "pendente_gelo": {
+   "x": 144,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "pendente_lua": {
+   "x": 160,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "pendente_estrela": {
+   "x": 176,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "bau": {
+   "x": 192,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "bau_aberto": {
+   "x": 208,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "bau_grande": {
+   "x": 224,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "bau_grande_aberto": {
+   "x": 240,
+   "y": 160,
+   "w": 16,
+   "h": 16,
+   "grupo": "Objetos e itens"
+  },
+  "grama_0": {
+   "x": 0,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "grama_1": {
+   "x": 16,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "grama_2": {
+   "x": 32,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "grama_flores": {
+   "x": 48,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "caminho": {
+   "x": 64,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "arvore_outono": {
+   "x": 80,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "pedra": {
+   "x": 96,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "arbusto": {
+   "x": 112,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "arbusto_cortado": {
+   "x": 128,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "agua_0": {
+   "x": 144,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "lava_0": {
+   "x": 160,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "agua_1": {
+   "x": 176,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "lava_1": {
+   "x": 192,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "entrada_caverna": {
+   "x": 208,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "portao_castelo": {
+   "x": 224,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "muralha_castelo": {
+   "x": 240,
+   "y": 176,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "ameia_castelo": {
+   "x": 0,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "estandarte": {
+   "x": 16,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "parede_castelo": {
+   "x": 32,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "piso_castelo": {
+   "x": 48,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "tapete_real": {
+   "x": 64,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "porta_trancada": {
+   "x": 80,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "porta_chefe": {
+   "x": 96,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "escada": {
+   "x": 112,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "grade_fechada": {
+   "x": 128,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "braseiro_0": {
+   "x": 144,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "braseiro_1": {
+   "x": 160,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "braseiro_2": {
+   "x": 176,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "estatua_guardia": {
+   "x": 192,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "piso_rachado": {
+   "x": 208,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "braseiro_apagado": {
+   "x": 224,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "barricada": {
+   "x": 240,
+   "y": 192,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino da Brasa"
+  },
+  "caranguejo_0": {
+   "x": 0,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "caranguejo_1": {
+   "x": 16,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "caranguejo_dano": {
+   "x": 32,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "caranguejinho": {
+   "x": 48,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "agua_viva_0": {
+   "x": 64,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "agua_viva_1": {
+   "x": 80,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "agua_viva_carregada": {
+   "x": 96,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "agua_viva_dano": {
+   "x": 112,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "guerreiro_coral_frente": {
+   "x": 128,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "guerreiro_coral_costas": {
+   "x": 144,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "guerreiro_coral_dano": {
+   "x": 160,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "tinta": {
+   "x": 176,
+   "y": 208,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Marés"
+  },
+  "kraken_0": {
+   "x": 0,
+   "y": 224,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe — Kraken"
+  },
+  "kraken_1": {
+   "x": 32,
+   "y": 224,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe — Kraken"
+  },
+  "kraken_puxado": {
+   "x": 64,
+   "y": 224,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe — Kraken"
+  },
+  "kraken_dano": {
+   "x": 96,
+   "y": 224,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe — Kraken"
+  },
+  "barqueiro": {
+   "x": 0,
+   "y": 256,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens — Marés"
+  },
+  "barqueiro_1": {
+   "x": 16,
+   "y": 256,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens — Marés"
+  },
+  "pescador": {
+   "x": 32,
+   "y": 256,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens — Marés"
+  },
+  "barco": {
+   "x": 48,
+   "y": 256,
+   "w": 32,
+   "h": 16,
+   "grupo": "Personagens — Marés"
+  },
+  "areia_0": {
+   "x": 0,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "areia_1": {
+   "x": 16,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "areia_conchas": {
+   "x": 32,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "caminho_pedras": {
+   "x": 48,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "palmeira": {
+   "x": 64,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "rocha_mar": {
+   "x": 80,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "alga": {
+   "x": 96,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "alga_cortada": {
+   "x": 112,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "mar_0": {
+   "x": 128,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "agua_funda_0": {
+   "x": 144,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "mar_1": {
+   "x": 160,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "agua_funda_1": {
+   "x": 176,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "pier": {
+   "x": 192,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "abismo": {
+   "x": 208,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "poste_gancho": {
+   "x": 224,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "coral": {
+   "x": 240,
+   "y": 272,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "parede_mares": {
+   "x": 0,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "piso_mares": {
+   "x": 16,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "porta_trancada_mares": {
+   "x": 32,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "porta_chefe_mares": {
+   "x": 48,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "escada_mares": {
+   "x": 64,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "grade_fechada_mares": {
+   "x": 80,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "estatua_mares": {
+   "x": 96,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "tapete_mares": {
+   "x": 112,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "muralha_mares": {
+   "x": 128,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "ameia_mares": {
+   "x": 144,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "estandarte_mares": {
+   "x": 160,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "portao_mares": {
+   "x": 176,
+   "y": 288,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino das Marés"
+  },
+  "harpia_0": {
+   "x": 0,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "harpia_1": {
+   "x": 16,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "harpia_dano": {
+   "x": 32,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "golem_0": {
+   "x": 48,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "golem_1": {
+   "x": 64,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "golem_dano": {
+   "x": 80,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "redemoinho_0": {
+   "x": 96,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "redemoinho_1": {
+   "x": 112,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "arqueiro_frente": {
+   "x": 128,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "arqueiro_costas": {
+   "x": 144,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "arqueiro_dano": {
+   "x": 160,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "flecha": {
+   "x": 176,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "filhote": {
+   "x": 192,
+   "y": 304,
+   "w": 16,
+   "h": 16,
+   "grupo": "Inimigos — Ventos"
+  },
+  "grifo_0": {
+   "x": 0,
+   "y": 320,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe — Grifo"
+  },
+  "grifo_1": {
+   "x": 32,
+   "y": 320,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe — Grifo"
+  },
+  "grifo_atordoado": {
+   "x": 64,
+   "y": 320,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe — Grifo"
+  },
+  "grifo_dano": {
+   "x": 96,
+   "y": 320,
+   "w": 32,
+   "h": 32,
+   "grupo": "Chefe — Grifo"
+  },
+  "aguia": {
+   "x": 0,
+   "y": 352,
+   "w": 32,
+   "h": 32,
+   "grupo": "Personagens e espada — Ventos"
+  },
+  "monge": {
+   "x": 32,
+   "y": 352,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens e espada — Ventos"
+  },
+  "monge_1": {
+   "x": 48,
+   "y": 352,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens e espada — Ventos"
+  },
+  "espada_reinos_cima": {
+   "x": 64,
+   "y": 352,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens e espada — Ventos"
+  },
+  "espada_reinos_baixo": {
+   "x": 80,
+   "y": 352,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens e espada — Ventos"
+  },
+  "espada_reinos_direita": {
+   "x": 96,
+   "y": 352,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens e espada — Ventos"
+  },
+  "espada_reinos_esquerda": {
+   "x": 112,
+   "y": 352,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens e espada — Ventos"
+  },
+  "espada_reinos_diagonal": {
+   "x": 128,
+   "y": 352,
+   "w": 16,
+   "h": 16,
+   "grupo": "Personagens e espada — Ventos"
+  },
+  "grama_alta_0": {
+   "x": 0,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "grama_alta_1": {
+   "x": 16,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "flores_brancas": {
+   "x": 32,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "caminho_montanha": {
+   "x": 48,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "pinheiro": {
+   "x": 64,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "pedra_montanha": {
+   "x": 80,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "arbusto_ventos": {
+   "x": 96,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "arbusto_ventos_cortado": {
+   "x": 112,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "abismo_nuvens_0": {
+   "x": 128,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "abismo_nuvens_1": {
+   "x": 144,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "parede_ventos": {
+   "x": 160,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "piso_ventos": {
+   "x": 176,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "porta_trancada_ventos": {
+   "x": 192,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "porta_chefe_ventos": {
+   "x": 208,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "escada_ventos": {
+   "x": 224,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "grade_fechada_ventos": {
+   "x": 240,
+   "y": 384,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "estatua_ventos": {
+   "x": 0,
+   "y": 400,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "tapete_ventos": {
+   "x": 16,
+   "y": 400,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "muralha_ventos": {
+   "x": 32,
+   "y": 400,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "ameia_ventos": {
+   "x": 48,
+   "y": 400,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "estandarte_ventos": {
+   "x": 64,
+   "y": 400,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "portao_ventos": {
+   "x": 80,
+   "y": 400,
+   "w": 16,
+   "h": 16,
+   "grupo": "Cenário — Reino dos Ventos"
+  },
+  "salamandra_0": {
+   "x": 0,
+   "y": 416,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários — mini-chefes"
+  },
+  "salamandra_1": {
+   "x": 32,
+   "y": 416,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários — mini-chefes"
+  },
+  "salamandra_tonta": {
+   "x": 64,
+   "y": 416,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários — mini-chefes"
+  },
+  "salamandra_dano": {
+   "x": 96,
+   "y": 416,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários — mini-chefes"
+  },
+  "caranguejo_rei": {
+   "x": 128,
+   "y": 416,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários — mini-chefes"
+  },
+  "caranguejo_rei_1": {
+   "x": 160,
+   "y": 416,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários — mini-chefes"
+  },
+  "caranguejo_rei_virado": {
+   "x": 192,
+   "y": 416,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários — mini-chefes"
+  },
+  "caranguejo_rei_dano": {
+   "x": 224,
+   "y": 416,
+   "w": 32,
+   "h": 32,
+   "grupo": "Santuários — mini-chefes"
+  },
+  "bolha": {
+   "x": 0,
+   "y": 448,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários — mini-chefes"
+  },
+  "cinza_0": {
+   "x": 0,
+   "y": 464,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários — cenário"
+  },
+  "cinza_1": {
+   "x": 16,
+   "y": 464,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários — cenário"
+  },
+  "cinza_brasas": {
+   "x": 32,
+   "y": 464,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários — cenário"
+  },
+  "caminho_basalto": {
+   "x": 48,
+   "y": 464,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários — cenário"
+  },
+  "arvore_morta": {
+   "x": 64,
+   "y": 464,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários — cenário"
+  },
+  "rocha_vulcanica": {
+   "x": 80,
+   "y": 464,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários — cenário"
+  },
+  "portal_santuario": {
+   "x": 96,
+   "y": 464,
+   "w": 16,
+   "h": 16,
+   "grupo": "Santuários — cenário"
+  },
+  "pino_alto_azul": {
+   "x": 0,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "pino_baixo_azul": {
+   "x": 16,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "pino_alto_laranja": {
+   "x": 32,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "pino_baixo_laranja": {
+   "x": 48,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "orbe_azul": {
+   "x": 64,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "orbe_laranja": {
+   "x": 80,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "alavanca_0": {
+   "x": 96,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "alavanca_1": {
+   "x": 112,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "plataforma": {
+   "x": 128,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "mapa_masmorra": {
+   "x": 144,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "bussola": {
+   "x": 160,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "chave_chefe": {
+   "x": 176,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "coluna": {
+   "x": 192,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "ossos": {
+   "x": 208,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "entulho": {
+   "x": 224,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "escada_sobe": {
+   "x": 240,
+   "y": 480,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "fosso_seco": {
+   "x": 0,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "piso_molhado": {
+   "x": 16,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "parede_rachada": {
+   "x": 32,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "coluna_mares": {
+   "x": 48,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "coluna_ventos": {
+   "x": 64,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "ossos_mares": {
+   "x": 80,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "ossos_ventos": {
+   "x": 96,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "entulho_mares": {
+   "x": 112,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "entulho_ventos": {
+   "x": 128,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "escada_sobe_mares": {
+   "x": 144,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "escada_sobe_ventos": {
+   "x": 160,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "parede_rachada_mares": {
+   "x": 176,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "parede_rachada_ventos": {
+   "x": 192,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "piso_molhado_mares": {
+   "x": 208,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  },
+  "piso_molhado_ventos": {
+   "x": 224,
+   "y": 496,
+   "w": 16,
+   "h": 16,
+   "grupo": "Masmorras — mecanismos"
+  }
+ }
+}
