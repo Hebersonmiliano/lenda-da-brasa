@@ -1,6 +1,6 @@
 # Guia Completo — Lenda da Brasa
 
-Guia passo a passo para terminar os capítulos 1 a 3 e os 8 santuários de Lenda da Brasa, com a rota de cada castelo, onde estão os itens e como vencer cada chefe.
+Guia passo a passo para terminar Lenda da Brasa do começo ao fim — os 3 castelos, os 8 santuários, a Fortaleza Sombria e o Coração do Abismo, com a rota de cada castelo, onde estão os itens e como vencer cada chefe.
 
 ![Tela de título de Lenda da Brasa](guia/00_titulo.png)
 
