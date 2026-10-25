@@ -2983,6 +2983,342 @@
    "w": 32,
    "h": 32,
    "grupo": "Santuários II — inimigos"
+  },
+  "parede_umbra": {
+   "x": 0,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "piso_umbra": {
+   "x": 16,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "porta_trancada_umbra": {
+   "x": 32,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "porta_chefe_umbra": {
+   "x": 48,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "escada_umbra": {
+   "x": 64,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "grade_fechada_umbra": {
+   "x": 80,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "estatua_umbra": {
+   "x": 96,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "tapete_umbra": {
+   "x": 112,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "braseiro_apagado_umbra": {
+   "x": 128,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "coluna_umbra": {
+   "x": 144,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "ossos_umbra": {
+   "x": 160,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "entulho_umbra": {
+   "x": 176,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "escada_sobe_umbra": {
+   "x": 192,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "parede_rachada_umbra": {
+   "x": 208,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "piso_molhado_umbra": {
+   "x": 224,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "parede_bomba_umbra": {
+   "x": 240,
+   "y": 784,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "parede_abismo": {
+   "x": 0,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "piso_abismo": {
+   "x": 16,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "porta_trancada_abismo": {
+   "x": 32,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "porta_chefe_abismo": {
+   "x": 48,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "escada_abismo": {
+   "x": 64,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "grade_fechada_abismo": {
+   "x": 80,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "estatua_abismo": {
+   "x": 96,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "tapete_abismo": {
+   "x": 112,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "braseiro_apagado_abismo": {
+   "x": 128,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "coluna_abismo": {
+   "x": 144,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "ossos_abismo": {
+   "x": 160,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "entulho_abismo": {
+   "x": 176,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "escada_sobe_abismo": {
+   "x": 192,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "parede_rachada_abismo": {
+   "x": 208,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "piso_molhado_abismo": {
+   "x": 224,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "parede_bomba_abismo": {
+   "x": 240,
+   "y": 800,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — cenário"
+  },
+  "princesa_0": {
+   "x": 0,
+   "y": 816,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "princesa_1": {
+   "x": 16,
+   "y": 816,
+   "w": 16,
+   "h": 16,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "rei_umbra_0": {
+   "x": 32,
+   "y": 816,
+   "w": 32,
+   "h": 32,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "rei_umbra_1": {
+   "x": 64,
+   "y": 816,
+   "w": 32,
+   "h": 32,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "rei_umbra_conjura": {
+   "x": 96,
+   "y": 816,
+   "w": 32,
+   "h": 32,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "rei_umbra_teleporte": {
+   "x": 128,
+   "y": 816,
+   "w": 32,
+   "h": 32,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "rei_umbra_dano": {
+   "x": 160,
+   "y": 816,
+   "w": 32,
+   "h": 32,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "rei_umbra_tonto": {
+   "x": 192,
+   "y": 816,
+   "w": 32,
+   "h": 32,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "sombra_rei": {
+   "x": 0,
+   "y": 848,
+   "w": 40,
+   "h": 40,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "sombra_rei_gelo": {
+   "x": 40,
+   "y": 848,
+   "w": 40,
+   "h": 40,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "sombra_rei_pedra": {
+   "x": 80,
+   "y": 848,
+   "w": 40,
+   "h": 40,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "sombra_rei_voo": {
+   "x": 120,
+   "y": 848,
+   "w": 40,
+   "h": 40,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "sombra_rei_blindada": {
+   "x": 160,
+   "y": 848,
+   "w": 40,
+   "h": 40,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "sombra_rei_olho": {
+   "x": 200,
+   "y": 848,
+   "w": 40,
+   "h": 40,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "sombra_rei_1": {
+   "x": 0,
+   "y": 888,
+   "w": 40,
+   "h": 40,
+   "grupo": "Reino Sombrio — personagens"
+  },
+  "sombra_rei_dano": {
+   "x": 40,
+   "y": 888,
+   "w": 40,
+   "h": 40,
+   "grupo": "Reino Sombrio — personagens"
   }
  }
 }

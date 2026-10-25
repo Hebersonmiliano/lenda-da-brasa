@@ -252,6 +252,103 @@ Uma torre de 5 andares em que cada sala pede um item diferente.
 
 ![O Guardião Estelar](guia/32_guardiao_estelar.png)
 
+## Capítulo 4 — O Reino Sombrio
+
+Com os **8 pendentes**, um **portal sombrio** se abre no **Vale de Lume**, a sudeste, perto do caminho que leva ao lago. Ele leva à **Fortaleza Sombria**, onde o Rei Umbra prende a Princesa Lírian.
+
+![O portal sombrio no Vale de Lume](guia/37_portal_sombrio.png)
+
+### Rota da Fortaleza Sombria
+
+São 12 salas num único andar. Itens usados: Bastão de Gelo, Arco, Lanterna, Pena, Gancho e Martelo.
+
+1. **Portão Negro → Pátio das Sombras** (norte).
+2. **Câmara Gélida Negra** (oeste do pátio): o **MAPA** está no canto. Congele a água com o **Bastão de Gelo** para chegar à ilha da **1ª chave**.
+3. **Galeria dos Olhos Negros** (leste do pátio): flechas nos **2 olhos** fazem surgir a **BÚSSOLA**.
+4. Abra a porta trancada ao norte do pátio: **Salão Negro**.
+5. **Cripta das Almas** (oeste do salão, escura): com a **Lanterna**, a ponte fantasma aparece até a **2ª chave**. Ao norte dela fica a **Torre dos Ventos Negros**: suba no vento e pule os buracos com a **Pena** até o **pedaço de coração**.
+6. Abra a porta trancada a leste do salão: **Arsenal do Rei**. Use o **Gancho** no poste para cruzar a água e o **Martelo** nas estacas: **CHAVE MESTRA**. Ao norte do arsenal, a **Câmara do Tesouro** tem uma armadilha de ondas e **50 brasas**.
+7. Ao norte do salão: **Antessala do Trono** e a porta grande.
+
+![Portão Negro da Fortaleza Sombria](guia/38_fortaleza.png)
+
+![Câmara Gélida Negra: a chave na ilha](guia/39_ilha_chave.png)
+
+![Arsenal do Rei: gancho, estacas e a chave mestra](guia/40_arsenal.png)
+
+![Torre dos Ventos Negros](guia/41_torre_ventos.png)
+
+### O Rei Umbra
+
+Nenhuma arma fere o rei diretamente. Ele lança **esferas de energia roxa**: **golpeie a esfera com a espada** quando ela chegar perto e ela volta, dourada, até ele. Acertado pela própria magia, o rei fica **tonto** por uns 2 segundos: é a hora de atacar. Ele também se **teletransporta** pela sala. Abaixo da metade da vida, solta **anéis de sombra** e chama **morcegos**.
+
+![O Rei Umbra lança uma esfera](guia/42_rei_umbra.png)
+
+![Esfera devolvida: o rei está tonto](guia/43_rei_tonto.png)
+
+Vencido o rei, a princesa é libertada... mas conta que a **Sombra do Rei** ainda vive. A escuridão puxa você para o abismo.
+
+## Capítulo 5 — O Coração do Abismo
+
+### A Grande Porta
+
+No **Portão do Abismo** está a Grande Porta, com **11 encaixes**. Os **3 cristais** e os **8 pendentes** saem do seu inventário e se encaixam um a um, e a porta se abre. Desta sala, a escada para baixo leva de volta ao Vale de Lume.
+
+![Os 11 emblemas se encaixando na Grande Porta](guia/44_grande_porta.png)
+
+![A Grande Porta aberta](guia/45_porta_aberta.png)
+
+### As 11 salas de memória
+
+Cada sala é um **eco** de um lugar por onde você passou, tingido de roxo. A barra de 11 quadradinhos embaixo mostra em qual eco você está. Sempre siga para o **norte**.
+
+| Eco | Desafio | Como passar |
+| --- | --- | --- |
+| 1. Brasa | 4 braseiros e lava | Acenda os 4 com o Bastão de Brasa em até 6 s |
+| 2. Marés | Faixa larga de água | Gancho no poste do outro lado (ou congele a água) |
+| 3. Ventos | Chão rachado entre ventos | Corra pelo meio sem parar; o vento empurra para o abismo |
+| 4. Sol | 3 olhos | Flechas nos 3 olhos em até 6 s |
+| 5. Fogo | Duas barricadas de madeira | Queime com o Bastão de Brasa |
+| 6. Mar | 2 blocos | Empurre cada bloco até o botão abaixo dele |
+| 7. Floresta | Parede de bomba e rochas | Bombas |
+| 8. Sombra | Sala escura sobre o abismo | Lanterna para ver a ponte fantasma em zigue-zague |
+| 9. Gelo | Lago fundo | Bastão de Gelo |
+| 10. Lua | Armadilha com armaduras | Martelo para rachar as armaduras; vença as ondas |
+| 11. Estrela | Pinos, orbe e 2 olhos | Acerte o orbe para baixar os pinos e as flechas nos olhos |
+
+![Eco da Brasa](guia/46_eco_brasa.png)
+
+![Eco do Mar](guia/47_eco_mar.png)
+
+![Eco da Sombra](guia/48_eco_sombra.png)
+
+![Eco da Estrela](guia/49_eco_estrela.png)
+
+### A Sombra do Rei — batalha final
+
+A luta tem **3 fases**; as marcas douradas na barra de vida mostram onde cada uma termina.
+
+1. **Luz.** A Sombra é quase invisível e a espada a atravessa. Acenda as **4 chamas** dos cantos com o Bastão de Brasa: ela aparece por alguns segundos. Golpeie até ela engolir a luz e repita.
+2. **Elementos.** A cada 5 segundos ela muda de forma. Use o item certo para desfazer a forma e então ataque com a espada:
+   - **Gelo:** Bastão de Brasa
+   - **Pedra:** Bomba
+   - **Alada:** Gancho
+   - **Blindada:** Martelo
+   - **Olho:** Flecha
+3. **Final.** O chão desaba e sobram ilhas de pedra. Só a **luz carregada** fere: **segure o botão de ataque** até a espada brilhar e solte para disparar 8 raios de luz. Pule as **ondas sombrias** com a **Pena** e não caia nos buracos entre as ilhas.
+
+![Fase 1: as chamas revelam a Sombra](guia/50_sombra_fase1.png)
+
+![Fase 2: a forma de pedra](guia/51_sombra_fase2.png)
+
+![Fase 3: o golpe de luz carregado](guia/52_sombra_fase3.png)
+
+### Final
+
+Vencida a Sombra, você volta ao Vale de Lume com a princesa, e vêm os **créditos**. Fique até o fim: há uma cena depois deles. O jogo fica salvo no Vale, com tudo completo.
+
+![Créditos](guia/53_creditos.png)
+
 ## Chefes
 
 Todo chefe tem uma fraqueza ligada a um item. Antes dela, a espada não faz dano. Abaixo da metade da vida, quase todos entram em **fúria** e ficam mais rápidos.
@@ -268,6 +365,8 @@ Todo chefe tem uma fraqueza ligada a um item. Antes dela, a espada não faz dano
 | Espectro | Santuário da Sombra | Acenda as 4 chamas da sala para ele aparecer e golpeie antes que as apague |
 | Yeti das Neves | Santuário do Gelo | Congele-o com o Bastão de Gelo e golpeie |
 | Cavaleiro da Lua | Ruínas da Lua | Uma martelada racha a armadura por alguns segundos; golpeie nesse tempo |
+| Rei Umbra | Fortaleza Sombria | Rebata as esferas com a espada; tonto, ele leva golpes |
+| Sombra do Rei | Coração do Abismo | Fase 1: 4 chamas. Fase 2: o item de cada forma. Fase 3: golpe de luz carregado (segure o ataque) |
 | Guardião Estelar | Pico Estelar | Fase 1: flecha no olho aberto. Fase 2: bomba perto dele. Fase 3: puxe-o com o Gancho. Depois de cada uma, espada |
 
 ## Segredos e dicas
@@ -289,8 +388,10 @@ Junte **4 pedaços de coração** para ganhar um coração inteiro; o menu mostr
 | Pedaço de coração | Labirinto das Almas (Sombra) | Pontes fantasmas |
 | Pedaço de coração | Poço de Gelo (Gelo) | Congelar a água |
 | Pedaço de coração | Observatório e Relicário (Lua) | Martelo nas armaduras; 3ª chave |
+| Pedaço de coração | Torre dos Ventos Negros (Fortaleza Sombria) | Pena para pular os buracos |
 | Pedaço de coração | Jardim Estelar (Estrela) | Acender os 4 braseiros a tempo |
 | 50 brasas | Uma sala selada em cada castelo e santuário | Parede oca ou parede de bomba |
+| 50 brasas | Câmara do Tesouro (Fortaleza Sombria) | Vencer a armadilha |
 
 - **Parede oca:** quando aparecer "A PAREDE PARECE OCA", dê 3 golpes de espada. Ela tem uma rachadura fina.
 - **Parede de bomba:** a rachadura é grande e escura, e só cai com bomba. Ter as bombas cedo ajuda a pegar os extras ao voltar.

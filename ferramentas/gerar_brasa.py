@@ -799,9 +799,84 @@ def starguard(eye=True,ph=0):
     else: d.line([(11,16),(21,16)],fill=P_('k'),width=2)
     return im
 enemies_s2['guardiao_estelar']=starguard(True);enemies_s2['guardiao_estelar_1']=starguard(True,1);enemies_s2['guardiao_estelar_fechado']=starguard(False);enemies_s2['guardiao_estelar_dano']=flash(starguard(True))
+
+# =============== REINO SOMBRIO E CORAÇÃO DO ABISMO ===============
+final_t={}; final_e={}
+THEMES2={'umbra':(['#2a1418','#180a0c','#3e1e22','#32181c','#3e2024','#28121a'],['#5a1420','#7a1e2a','#2a0a10','#c8243a','#ff5a5a','#3a0a14']),
+         'abismo':(['#140e1e','#0a0610','#221a32','#1c1428','#241a34','#160f20'],['#2a1a4a','#4a2a7a','#120a24','#8a4ad8','#c89aff','#1e1036'])}
+for nm,(ins,outs) in THEMES2.items():
+    m={**dict(zip(CASTLE_IN,ins)),**dict(zip(CASTLE_OUT,outs))}
+    for a,b in (('parede_castelo','parede'),('piso_castelo','piso'),('porta_trancada','porta_trancada'),('porta_chefe','porta_chefe'),
+                ('escada','escada'),('grade_fechada','grade_fechada'),('estatua_guardia','estatua'),('tapete_real','tapete'),('braseiro_apagado','braseiro_apagado')):
+        final_t[f'{b}_{nm}']=remap(tiles[a],m)
+    for n in ('coluna','ossos','entulho','escada_sobe','parede_rachada','piso_molhado'):
+        final_t[f'{n}_{nm}']=remap(mech[n],m)
+    final_t[f'parede_bomba_{nm}']=remap(tiles_s2['parede_bomba'],dict(zip(CASTLE_IN,ins)))
+# Princesa Lírian (16x16)
+PRIN=["......yYy.......",".....yYyYy......","....kkkkkkk.....","...kbbsssbbk....","...kbsksksbk....","...kbsssssbk....","....kbsrsbk.....","....kOOOOOk.....","...kOOQOQOOk....","..kOOOQOQOOOk...","..kOOOOOOOOOk...","..kQOOOOOOOQk...","..kOOOOOOOOOk...","...kOOOOOOOk....","....kkk.kkk.....","................"]
+final_e['princesa_0']=grid(check('princesa',PRIN,16)); final_e['princesa_1']=shift(final_e['princesa_0'],0,1)
+# Rei Umbra (32x32)
+def umbra(ph=0,tele=False,cast=False):
+    im,d=big(); cape=(40,14,30,255); capeL=(70,24,50,255); arm=(60,56,80,255); armL=(96,92,120,255)
+    d.polygon([(6,30),(10,10),(22,10),(26,30)],fill=cape,outline=P_('k'))
+    d.polygon([(9,29),(12,14),(20,14),(23,29)],fill=capeL)
+    ell(d,[9,12,23,26],arm); d.rectangle([12,16,20,22],fill=armL,outline=P_('k')); d.rectangle([15,17,17,21],fill=P_('r'))
+    ell(d,[11,2,21,13],(30,26,40,255)); d.rectangle([13,6,19,8],fill=P_('k')); d.point((14,7),fill=P_('r')); d.point((18,7),fill=P_('r'))
+    d.polygon([(11,4),(12,0),(14,3),(16,0),(18,3),(20,0),(21,4)],fill=P_('y'),outline=P_('k'))
+    hy=14-ph
+    if cast:
+        ell(d,[2,hy-6,10,hy+2],(150,60,220,255),'w'); ell(d,[22,hy-6,30,hy+2],(150,60,220,255),'w')
+    else:
+        ell(d,[4,hy,10,hy+6],arm); ell(d,[22,hy,28,hy+6],arm)
+    if tele:
+        px=im.load()
+        for y in range(32):
+            for x in range(32):
+                c=px[x,y]
+                if c[3] and (x+y)%2: px[x,y]=(0,0,0,0)
+                elif c[3]: px[x,y]=(c[0]//2+60,c[1]//2,c[2]//2+90,180)
+    return im
+final_e['rei_umbra_0']=umbra(0);final_e['rei_umbra_1']=umbra(1);final_e['rei_umbra_conjura']=umbra(0,cast=True)
+final_e['rei_umbra_teleporte']=umbra(0,tele=True);final_e['rei_umbra_dano']=flash(umbra(0));final_e['rei_umbra_tonto']=recolor(umbra(0),{'y':'G'})
+# Sombra do Rei (40x40) e formas
+def sk(form=None,ph=0):
+    im=Image.new('RGBA',(40,40),(0,0,0,0));d=ImageDraw.Draw(im)
+    body=(26,12,44,255);bodyL=(60,30,96,255);eye=(255,60,110,255)
+    if form=='voo':
+        d.polygon([(2,10),(16,18),(4,26)],fill=(90,60,140,255),outline=P_('k'));d.polygon([(38,10),(24,18),(36,26)],fill=(90,60,140,255),outline=P_('k'))
+    d.ellipse([8,4,32,30],fill=body,outline=(10,4,16,255))
+    d.polygon([(8,18),(32,18),(34,38),(28,33+ph),(22,38),(18,33-ph),(12,38),(6,34)],fill=body,outline=(10,4,16,255))
+    d.ellipse([12,8,28,22],fill=bodyL)
+    d.polygon([(10,6),(13,0),(16,5),(20,-1),(24,5),(27,0),(30,6)],fill=(200,160,60,255),outline=P_('k'))
+    if form=='olho':
+        d.ellipse([12,9,28,23],fill=P_('w'),outline=P_('k'));d.ellipse([17,11,23,21],fill=eye);d.point((20,14),fill=P_('k'))
+    else:
+        d.rectangle([13,13,17,15],fill=eye);d.rectangle([23,13,27,15],fill=eye)
+    img=im
+    if form=='gelo': img=Image.alpha_composite(im,Image.new('RGBA',(40,40),(0,0,0,0))); ov=Image.new('RGBA',(40,40),(0,0,0,0));od=ImageDraw.Draw(ov)
+    if form=='gelo':
+        for (x,y) in ((6,8),(30,6),(4,24),(34,22),(18,34)): od.polygon([(x,y-5),(x+3,y),(x,y+5),(x-3,y)],fill=(170,230,255,230),outline=(255,255,255,255))
+        img=Image.alpha_composite(img,ov); img=Image.blend(img,recolor(img,{}),0)
+        px=img.load()
+        for y in range(40):
+            for x in range(40):
+                c=px[x,y]
+                if c[3] and c==body: px[x,y]=(40,80,120,255)
+    if form=='pedra':
+        px=img.load()
+        for y in range(40):
+            for x in range(40):
+                c=px[x,y]
+                if c[3] and (c==body or c==bodyL): px[x,y]=(96,90,84,255) if (x*7+y*3)%11 else (60,56,52,255)
+    if form=='blindada':
+        dd=ImageDraw.Draw(img);dd.rectangle([10,20,30,34],fill=(180,184,210,255),outline=P_('k'));dd.line([(10,26),(30,26)],fill=(120,124,150,255));dd.ellipse([16,22,24,30],fill=P_('Y'),outline=P_('k'))
+    return img
+for f in (None,'gelo','pedra','voo','blindada','olho'):
+    final_e['sombra_rei'+('_'+f if f else '')]=sk(f)
+final_e['sombra_rei_1']=sk(None,2); final_e['sombra_rei_dano']=flash(sk(None))
 # =============== MONTAGEM DA FOLHA ===============
 SECTIONS=[('Herói — Lume',{**hero_sprites,**weapons}),('Herói — ataques',attack),('Inimigos',enemies),('Chefe',bosses),
-          ('Personagens',chars),('Objetos e itens',objs),('Cenário — Reino da Brasa',tiles),('Inimigos — Marés',enemies_m),('Chefe — Kraken',bosses_m),('Personagens — Marés',chars_m),('Cenário — Reino das Marés',tiles_m),('Inimigos — Ventos',enemies_v),('Chefe — Grifo',bosses_v),('Personagens e espada — Ventos',chars_v),('Cenário — Reino dos Ventos',tiles_v),('Santuários — mini-chefes',enemies_s),('Santuários — cenário',tiles_s),('Masmorras — mecanismos',mech),('Santuários II — cenário',tiles_s2),('Santuários II — objetos',objs_s2),('Santuários II — inimigos',enemies_s2)]
+          ('Personagens',chars),('Objetos e itens',objs),('Cenário — Reino da Brasa',tiles),('Inimigos — Marés',enemies_m),('Chefe — Kraken',bosses_m),('Personagens — Marés',chars_m),('Cenário — Reino das Marés',tiles_m),('Inimigos — Ventos',enemies_v),('Chefe — Grifo',bosses_v),('Personagens e espada — Ventos',chars_v),('Cenário — Reino dos Ventos',tiles_v),('Santuários — mini-chefes',enemies_s),('Santuários — cenário',tiles_s),('Masmorras — mecanismos',mech),('Santuários II — cenário',tiles_s2),('Santuários II — objetos',objs_s2),('Santuários II — inimigos',enemies_s2),('Reino Sombrio — cenário',final_t),('Reino Sombrio — personagens',final_e)]
 if BAD:
     for b in BAD: print('LINHA COM TAMANHO ERRADO:',b)
 SHEET_W=256
@@ -863,7 +938,7 @@ prev.convert('RGB').save(os.path.join(OUT,'lenda-da-brasa-preview.png'))
 with zipfile.ZipFile(os.path.join(OUT,'lenda-da-brasa-sprites.zip'),'w',zipfile.ZIP_DEFLATED) as z:
     z.write(os.path.join(OUT,'lenda-da-brasa-sprites.png'),'lenda-da-brasa-sprites.png')
     z.write(os.path.join(OUT,'lenda-da-brasa-atlas.json'),'lenda-da-brasa-atlas.json')
-    pastas={'Herói — Lume':'heroi','Herói — ataques':'heroi','Inimigos':'inimigos','Chefe':'chefe','Personagens':'personagens','Objetos e itens':'objetos','Cenário — Reino da Brasa':'cenario','Inimigos — Marés':'mares/inimigos','Chefe — Kraken':'mares/chefe','Personagens — Marés':'mares/personagens','Cenário — Reino das Marés':'mares/cenario','Inimigos — Ventos':'ventos/inimigos','Chefe — Grifo':'ventos/chefe','Personagens e espada — Ventos':'ventos/personagens','Cenário — Reino dos Ventos':'ventos/cenario','Santuários — mini-chefes':'santuarios/inimigos','Santuários — cenário':'santuarios/cenario','Masmorras — mecanismos':'masmorras','Santuários II — cenário':'santuarios2/cenario','Santuários II — objetos':'santuarios2/objetos','Santuários II — inimigos':'santuarios2/inimigos'}
+    pastas={'Herói — Lume':'heroi','Herói — ataques':'heroi','Inimigos':'inimigos','Chefe':'chefe','Personagens':'personagens','Objetos e itens':'objetos','Cenário — Reino da Brasa':'cenario','Inimigos — Marés':'mares/inimigos','Chefe — Kraken':'mares/chefe','Personagens — Marés':'mares/personagens','Cenário — Reino das Marés':'mares/cenario','Inimigos — Ventos':'ventos/inimigos','Chefe — Grifo':'ventos/chefe','Personagens e espada — Ventos':'ventos/personagens','Cenário — Reino dos Ventos':'ventos/cenario','Santuários — mini-chefes':'santuarios/inimigos','Santuários — cenário':'santuarios/cenario','Masmorras — mecanismos':'masmorras','Santuários II — cenário':'santuarios2/cenario','Santuários II — objetos':'santuarios2/objetos','Santuários II — inimigos':'santuarios2/inimigos','Reino Sombrio — cenário':'final/cenario','Reino Sombrio — personagens':'final/personagens'}
     for title,group in SECTIONS:
         for name,img in group.items():
             b=io.BytesIO(); img.save(b,'PNG'); z.writestr(f'{pastas[title]}/{name}.png',b.getvalue())

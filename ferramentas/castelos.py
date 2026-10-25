@@ -716,8 +716,9 @@ for r in ROOMS.values():
     if 'clear' in r:
         x, y, what = r['clear']; CLEAR[r['id']] = {'x': x, 'y': y, 'f': 'cc_'+r['id']}; CHESTS[f"{r['id']}:{x},{y}"] = what
     if 'lit' in r:
-        l = r['lit']; x, y, what = l['chest']
-        LIT[r['id']] = {'t': l['t'], 'open': [], 'chest': [x, y], 'f': 'lit_'+r['id'], 'msg': l['msg']}; CHESTS[f"{r['id']}:{x},{y}"] = what
+        l = r['lit']; LIT[r['id']] = {'t': l['t'], 'open': [list(q) for q in l.get('open', [])], 'f': 'lit_'+r['id'], 'msg': l['msg']}
+        if l.get('chest'):
+            x, y, what = l['chest']; LIT[r['id']]['chest'] = [x, y]; CHESTS[f"{r['id']}:{x},{y}"] = what
     if 'eyes' in r:
         e = r['eyes']; d = {'open': [list(p) for p in e.get('open', [])], 'f': 'eye_' + r['id'], 'msg': e.get('msg', 'A PASSAGEM SE ABRIU!')}
         if e.get('t'): d['t'] = e['t']
@@ -736,8 +737,10 @@ out.append('// ==== CASTELOS (gerado por castelos.py) ====')
 out.append('const CASTLE_MAPS=' + js({r['id']: r['rows'] for r in ROOMS.values()}) + ';')
 defs = {}
 for r in ROOMS.values():
-    d = {'theme': THEME[r['k']], 'k': r['k'], 'name': CNAME[r['k']] + ' · ' + r['name'], 'en': r['en']}
+    d = {'theme': r.get('theme') or THEME[r['k']], 'k': r['k'], 'name': CNAME[r['k']] + ' · ' + r['name'], 'en': r['en']}
     if r.get('dark'): d['dark'] = True
+    if r.get('home'): d['home'] = r['home']
+    if 'echo' in r: d['echo'] = r['echo']
     defs[r['id']] = d
 out.append('const CASTLE_DEF=' + js(defs) + ';')
 out.append('const CASTLE_LINKS=' + js(LINKS) + ';')
@@ -747,7 +750,7 @@ out.append('const CASTLE_CLEAR=' + js(CLEAR) + ';')
 out.append('const CASTLE_LIT=' + js(LIT) + ';')
 out.append('const CASTLE_BLOCKS=' + js(BLOCKS) + ';')
 out.append('const TRAPS=' + js(TRAPS) + ';')
-dg = {r['id']: [r['k'], r['fl'], r['gx'], r['gy']] for r in ROOMS.values()}
+dg = {r['id']: [r['k'], r['fl'], r['gx'], r['gy']] for r in ROOMS.values() if r['k'] != 'abismo'}
 dg.update({'d1': ['brasa', 0, 2, 0], 'c4': ['mares', 0, 2, 0], 'e4': ['ventos', 2, 2, 0]})
 out.append('const DGRID=' + js(dg) + ';')
 out.append('const CASTLE_SIGNS=' + js(SIGNS) + ';')

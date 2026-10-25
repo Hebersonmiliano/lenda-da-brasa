@@ -12,9 +12,12 @@ ou jogue no [Portal Pixel](https://hebersonmiliano.github.io/portal-jogos/jogo.h
 
 ![Capa](capa.png)
 
-## O que já dá para jogar
+## O que dá para jogar
+
+O jogo está completo, do começo ao final com créditos.
 
 - **Capítulos 1 a 3**: Reino da Brasa, Reino das Marés e Reino dos Ventos, cada um com mundo aberto, castelo e chefe.
+- **Capítulos 4 e 5**: Fortaleza Sombria (Rei Umbra) e Coração do Abismo (11 salas de memória e a Sombra do Rei).
 - **Castelos com exploração de verdade** (52 salas no total), com mapa, bússola, chaves pequenas e chave mestra:
   - *Castelo da Brasa* (20 salas, térreo e subsolo): salas escuras, lava, orbes e pinos, Bastão de Brasa.
   - *Castelo das Marés* (16 salas): uma alavanca sobe e baixa a água de todo o castelo; Gancho.
@@ -68,9 +71,12 @@ python3 ferramentas/build.py         # gera index.html a partir do template e do
 Para atualizar o Portal Pixel, copie `index.html`, `lenda-da-brasa-sprites.png` e `capa.png`
 para `jogos/lenda-da-brasa/` no repositório do portal e aumente `versao` em `jogos.js`.
 
-## Próximos passos
+## Capítulos finais
 
-O Reino Sombrio, a batalha final contra o Rei Umbra e o resgate da princesa.
+Com os 8 pendentes, um portal no Vale de Lume leva à **Fortaleza Sombria** (12 salas) e ao duelo com o
+**Rei Umbra**. Depois do resgate da princesa, a **Grande Porta** do abismo recebe os 3 cristais e os 8
+pendentes, e as **11 salas de memória** do **Coração do Abismo** levam à batalha final em 3 fases contra a
+**Sombra do Rei**. Créditos e cena pós-créditos incluídos. Veja o [guia completo](GUIA.md).
 
 ---
 Criado por Heberson Miliano.

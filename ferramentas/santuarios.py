@@ -1442,3 +1442,308 @@ region('pico', 'peak', 'Pico Estelar', [
 "TTTTTTTTTTTTTTTT"], [['harpy', 4, 6], ['golem', 11, 8]], 'v00', 'e', 'se0', req='p7')
 SIGNS.update({'se0:11,8': ['PICO ESTELAR. A última provação: cada andar pede tudo o que você aprendeu nos sete santuários.', 'Os olhos de pedra guardam a porta da torre.'],
               'se15:12,8': ['O GUARDIÃO ESTELAR espera no trono. A CHAVE MESTRA está no Cofre Estelar, no andar de baixo.']})
+
+# ======================= FORTALEZA SOMBRIA (Reino Sombrio) — Rei Umbra =======================
+THEME.update({'umbra': 'umbra', 'abismo': 'abismo'})
+CNAME.update({'umbra': 'Fortaleza Sombria', 'abismo': 'Coração do Abismo'})
+K = 'umbra'
+room('ru0', K, 0, 1, 4, 'Portão Negro', [
+"#######,,#######",
+"#U,,,,,KK,,,,,U#",
+"#,F,,,,KK,,,,F,#",
+"#,,,,,,KK,,,,,,#",
+"#,,cc,,KK,,cc,,#",
+"#,,,,,,KK,,,,,,#",
+"#,,cc,,KK,,cc,,#",
+"#,,,,,,KK,,,,,,#",
+"#,F,,,,KK,,P,F,#",
+"#U,,,,,KK,,,,,U#",
+"#######XX#######"], [['knight', 4, 3], ['knight', 11, 7]], exit=True, home=['ru0', 112, 128, 'up'])
+room('ru1', K, 0, 1, 3, 'Pátio das Sombras', [
+"#######LL#######",
+"#,,,,,,,,,,,,,,#",
+"#,U,,oo,,oo,,U,#",
+"#,,,,oo,,oo,,,,#",
+"#,,,,,,,,,,,,,,#",
+",,,,,,,,,,,,,,,,",
+"#,,,,oo,,oo,,,,#",
+"#,U,,oo,,oo,,U,#",
+"#,,,,,,,,,,,,,,#",
+"#V,,,,,,,,,,,,V#",
+"#######,,#######"], [['armor', 4, 4], ['knight', 11, 8], ['bat', 7, 2]], home=['ru0', 112, 128, 'up'])
+room('ru2', K, 0, 0, 3, 'Câmara Gélida Negra', [
+"################",
+"#H,,,,,,,,,,,,,#",
+"#,,wwwwwwwwww,,#",
+"#,,w,,,,,,,,w,,#",
+"#,,w,,,H,,,,w,,#",
+"#,,w,,,,,,,,w,,,",
+"#,,w,,,,,,,,w,,#",
+"#,,wwwwwwwwww,,#",
+"#,,,,,,,,,,,,,,#",
+"#V,,,,,,,,,,,,V#",
+"################"], [['jelly', 7, 6], ['golem', 13, 8]], chests={(1, 1): 'map', (7, 4): 'key'}, home=['ru0', 112, 128, 'up'])
+room('ru3', K, 0, 2, 3, 'Galeria dos Olhos Negros', [
+"####i######i####",
+"#,,,,,,,,,,,,,,#",
+"#,,777,,,,777,,#",
+"#,,7,7,,,,7,7,,#",
+"#,,777,,,,777,,#",
+",,,,,,,,,,,,,,,#",
+"#,,c,,,,,,,,c,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,c,,,,,,,,c,,#",
+"#V,,,,,,,,,,,,V#",
+"################"], [['archer', 13, 8], ['knight', 7, 6]], home=['ru0', 112, 128, 'up'],
+   eyes=dict(open=[], chest=(7, 7, 'compass'), msg='UM BAÚ APARECEU!'))
+room('ru6', K, 0, 1, 2, 'Salão Negro', [
+"#######,,#######",
+"#F,,,,,KK,,,,,F#",
+"#,,cc,,KK,,cc,,#",
+"#,,,,,,KK,,,,,,#",
+"#,,,,,,KK,,,,,,#",
+",,,,,,,KK,,,,,,L",
+"#,,,,,,KK,,,,,,#",
+"#,,,,,,KK,,,,,,#",
+"#,,cc,,KK,,cc,,#",
+"#F,,,,,KK,,,,,F#",
+"#######LL#######"], [['knight', 4, 4], ['knight', 11, 6], ['armor', 7, 3]], home=['ru0', 112, 128, 'up'])
+room('ru5', K, 0, 0, 2, 'Cripta das Almas', [
+"#######,,#######",
+"#,,,,,,,,,,,,,,#",
+"#ooooooooooo,,,#",
+"#ooooooooooo,,,#",
+"#,,ooooooooo,,,#",
+"#,Hgggggggggg,,,",
+"#,,ooooooooo,,,#",
+"#ooooooooooo,,,#",
+"#ooooooooooo,,,#",
+"#ooooooooooo,,,#",
+"################"], [['jelly', 7, 2], ['bat', 13, 8]], chests={(2, 5): 'key'}, dark=True, home=['ru0', 112, 128, 'up'])
+room('ru8', K, 0, 0, 1, 'Torre dos Ventos Negros', [
+"################",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,H,,,,,,,#",
+"#oooooooooooooo#",
+"#>>>>>>>>>>>>>o#",
+"#,,,,,,,,,,,,,,#",
+"#oooooooooooooo#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#######,,#######"], [['harpy', 4, 8], ['harpy', 11, 1]], chests={(7, 2): 'piece'}, home=['ru0', 112, 128, 'up'])
+room('ru7', K, 0, 2, 2, 'Arsenal do Rei', [
+"#######,,#######",
+"#,,,,,,,,,,,,,,#",
+"#,wwwwwwwwwww,,#",
+"#,w,,,,Q,,,,w,,#",
+"#,w,,,,,,,p,w,,#",
+"L,w,,,,,,pHpw,,#",
+"#,w,,,,,,,p,w,,#",
+"#,w,,,,,,,,,w,,#",
+"#,wwwwwwwwwww,,#",
+"#,,,,,,,,,,,,,,#",
+"################"], [['armor', 13, 3], ['knight', 4, 9]], chests={(10, 5): 'master'}, home=['ru0', 112, 128, 'up'])
+room('ru10', K, 0, 2, 1, 'Câmara do Tesouro', [
+"################",
+"#,,,,,,,,,,,,,,#",
+"#,V,,,,,,,,,,V,#",
+"#,,,,cc,,cc,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,cc,,cc,,,,#",
+"#,V,,,,,,,,,,V,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#######,,#######"], [['knight', 4, 4], ['armor', 11, 6]],
+   trap=[[['knight', 3, 8], ['knight', 12, 8], ['golem', 7, 2], ['bat', 4, 2], ['bat', 11, 2]]], clear=(7, 5, 'embers50'), home=['ru0', 112, 128, 'up'])
+room('ru9', K, 0, 1, 1, 'Antessala do Trono', [
+"#######GG#######",
+"#F,,,,,KK,,,,,F#",
+"#,U,,,,KK,,,,U,#",
+"#,,,,,,KK,,,,,,#",
+"#,,oo,,KK,,oo,,#",
+"#,,oo,,KK,,oo,,#",
+"#,,,,,,KK,,,,,,#",
+"#,U,,,,KK,,,,U,#",
+"#F,,,,,KK,,P,,F#",
+"#,,,,,,KK,,,,,,#",
+"#######,,#######"], [['knight', 3, 6], ['knight', 12, 3]], home=['ru0', 112, 128, 'up'])
+room('ru11', K, 0, 1, 0, 'Trono do Rei Umbra', [
+"################",
+"#V,,,,,KK,,,,,V#",
+"#,,c,,,KK,,,c,,#",
+"#,,,,,,KK,,,,,,#",
+"#,,,,,,KK,,,,,,#",
+"#,,,,,,KK,,,,,,#",
+"#,,,,,,KK,,,,,,#",
+"#,,c,,,KK,,,c,,#",
+"#,,,,,,KK,,,,,,#",
+"#V,,,,,KK,,,,,V#",
+"#######GG#######"], [], home=['ru0', 112, 128, 'up'])
+SIGNS.update({'ru0:11,8': ['FORTALEZA SOMBRIA. O Rei Umbra prende a Princesa Lírian no trono, ao norte.', 'Nenhuma arma comum o fere... mas a magia dele pode ser devolvida.'],
+              'ru9:11,8': ['O REI UMBRA aguarda além da porta grande. A CHAVE MESTRA está no Arsenal do Rei, a leste do Salão Negro.']})
+
+# ======================= CORAÇÃO DO ABISMO — 11 salas de memória e a batalha final =======================
+K = 'abismo'
+HOME = ['ax0', 120, 128, 'up']
+room('ax0', K, 0, 0, 12, 'Portão do Abismo', [
+"#######SS#######",
+"#,,,,,,,,,,,,,,#",
+"#,c,,,,,,,,,,c,#",
+"#,,,,,,,,,,,,,,#",
+"#,c,,,,,,,,,,c,#",
+"#,,,,,,,,,,,,,,#",
+"#,c,,,,,,,,,,c,#",
+"#,,,,,,,,,,,,,,#",
+"#,c,,,,,,,,,,c,#",
+"#,,,,,,,,,,,,,,#",
+"#######XX#######"], [], home=HOME, exit=True)
+room('ab1', K, 0, 0, 11, 'Eco da Brasa', [
+"#######SS#######",
+"#J,,~~~,,~~~,,J#",
+"#,,,~~~,,~~~,,,#",
+"#,,,,,,,,,,,,,,#",
+"#~~~,,~~~~,,~~~#",
+"#~~~,,~~~~,,~~~#",
+"#,,,,,,,,,,,,,,#",
+"#,,,~~~~~~~~,,,#",
+"#J,,~~~~~~~~,,J#",
+"#,,,,,,,,,,,,,,#",
+"#######SS#######"], [['spit', 7, 3], ['spit', 8, 6], ['knight', 12, 9]], theme='dungeon', echo=0, home=HOME,
+   lit=dict(t=6, open=[(7, 0), (8, 0)], msg='O CRISTAL DA BRASA BRILHA!'))
+room('ab2', K, 0, 0, 10, 'Eco das Marés', [
+"#######,,#######",
+"#,,,,,Q,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#wwwwwwwwwwwwww#",
+"#wwwwwwwwwwwwww#",
+"#wwwwwwwwwwwwww#",
+"#wwwwwwwwwwwwww#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#######SS#######"], [['jelly', 4, 4], ['jelly', 11, 5], ['crab', 7, 8]], theme='seacastle', echo=1, home=HOME)
+room('ab3', K, 0, 0, 9, 'Eco dos Ventos', [
+"#######,,#######",
+"#,,,,,,,,,,,,,,#",
+"#oooooo,,oooooo#",
+"#oooo<<rr<<oooo#",
+"#oooo<<rr<<oooo#",
+"#oooo<<rr<<oooo#",
+"#oooo<<rr<<oooo#",
+"#oooo<<rr<<oooo#",
+"#oooooo,,oooooo#",
+"#,,,,,,,,,,,,,,#",
+"#######,,#######"], [['harpy', 4, 1], ['harpy', 11, 9]], theme='skycastle', echo=2, home=HOME)
+room('ab4', K, 0, 0, 8, 'Eco do Sol', [
+"####i##SS##i####",
+"#,,,,,,,,,,,,,,#",
+"#,,oo,,,,,,oo,,#",
+"#,,oo,,,,,,oo,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,oo,,,,,,oo,,#",
+"#,,oo,,,,,,oo,,i",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#######,,#######"], [['archer', 1, 9], ['crab', 7, 5]], theme='sol', echo=3, home=HOME,
+   eyes=dict(open=[(7, 0), (8, 0)], t=6, msg='O PENDENTE DO SOL BRILHA!'))
+room('ab5', K, 0, 0, 7, 'Eco do Fogo', [
+"#######,,#######",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#ZZZZZZZZZZZZZZ#",
+"#,,,,,,,,,,,,,,#",
+"#~~~~~,,,,~~~~~#",
+"#~~~~~,,,,~~~~~#",
+"#,,,,,,,,,,,,,,#",
+"#ZZZZZZZZZZZZZZ#",
+"#,,,,,,,,,,,,,,#",
+"#######SS#######"], [['spit', 3, 4], ['spit', 12, 7], ['bat', 7, 1]], theme='dungeon', echo=4, home=HOME)
+room('ab6', K, 0, 0, 6, 'Eco do Mar', [
+"#######SS#######",
+"#,,,,,,,,,,,,,,#",
+"#,,M,,,,,,,,M,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,ww,,ww,,,,#",
+"#,,,,ww,,ww,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,I,,,,,,,,I,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#######,,#######"], [['crab', 7, 8], ['jelly', 7, 3]], theme='seacastle', echo=5, home=HOME, blocks=[(7, 0), (8, 0)])
+room('ab7', K, 0, 0, 5, 'Eco da Floresta', [
+"#######,,#######",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#88888888888888#",
+"#,,,,,,,,,,,,,,#",
+"#,777,,,,,,777,#",
+"#,7,7,,,,,,7,7,#",
+"#,777,,,,,,777,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#######SS#######"], [['golem', 7, 5], ['slime', 3, 9], ['slime', 12, 9]], theme='floresta', echo=6, home=HOME)
+room('ab8', K, 0, 0, 4, 'Eco da Sombra', [
+"#######,,#######",
+"#ooooooogoooooo#",
+"#ooooooogoooooo#",
+"#ooggggggoooooo#",
+"#oogooooooooooo#",
+"#oogooooooooooo#",
+"#oogggggooooooo#",
+"#oooooogooooooo#",
+"#oooooogooooooo#",
+"#,,,,,,,,,,,,,,#",
+"#######,,#######"], [['bat', 4, 8], ['jelly', 11, 3]], theme='sombra', echo=7, dark=True, home=HOME)
+room('ab9', K, 0, 0, 3, 'Eco do Gelo', [
+"#######,,#######",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#wwwwwwwwwwwwww#",
+"#wwwwwwwwwwwwww#",
+"#wwwwwwwwwwwwww#",
+"#,,,,,,,,,,,,,,#",
+"#,,ll,,,,,,ll,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#######,,#######"], [['jelly', 4, 4], ['jelly', 11, 4], ['golem', 7, 8]], theme='gelo', echo=8, home=HOME)
+room('ab10', K, 0, 0, 2, 'Eco da Lua', [
+"#######SS#######",
+"#,,,,,,,,,,,,,,#",
+"#,pp,,,,,,,,pp,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,c,,,,c,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,c,,,,c,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,pp,,,,,,,,pp,#",
+"#,,,,,,,,,,,,,,#",
+"#######,,#######"], [['armor', 4, 5], ['armor', 11, 5]], theme='lua', echo=9, home=HOME,
+   trap=[[['armor', 3, 3], ['armor', 12, 7], ['knight', 7, 2]]], trapOpen=[(7, 0), (8, 0)])
+room('ab11', K, 0, 0, 1, 'Eco da Estrela', [
+"####i##SS##i####",
+"#,,,1,,,,,,2,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,k,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,c,,,,,,,,c,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#######SS#######"], [['harpy', 4, 7], ['knight', 11, 7]], theme='estrela', echo=10, home=HOME,
+   eyes=dict(open=[(7, 0), (8, 0)], msg='O PENDENTE DA ESTRELA BRILHA!'))
+room('ab12', K, 0, 0, 0, 'Coração do Abismo', [
+"################",
+"#J,,,,,,,,,,,,J#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#,,,,,,,,,,,,,,#",
+"#J,,,,,,,,,,,,J#",
+"#######SS#######"], [], theme='abismo', home=HOME)
