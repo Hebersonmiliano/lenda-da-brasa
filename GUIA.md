@@ -21,10 +21,16 @@ O jogo roda no navegador, no computador ou no celular. São **3 espaços de salv
 | Usar o item equipado | K ou X | B ou X |
 | Abrir os itens | I | Y |
 | Pausa (salvar, sair, som) | Enter ou Esc | Start |
-| Mapa do castelo ou santuário | TAB | Select |
+| Mapa mundi (ao ar livre) ou mapa do castelo (lá dentro) | TAB | Select |
 | Ligar ou desligar o som | M | — |
 
 Com a vida cheia, a espada solta uma **onda de brasa** à distância. No celular, use os botões na tela.
+
+### Mapa Mundi
+
+A qualquer momento, ao ar livre, aperte **TAB** (ou escolha MAPA MUNDI no menu de pausa) para ver o mapa completo com o nome de cada lugar dos 4 reinos — Brasa, Marés, Ventos e Sombrio. Use ESQUERDA/DIREITA para trocar de reino.
+
+![Mapa Mundi com os 4 reinos](guia/62_mapa_mundi.png)
 
 ## Itens e equipamentos
 
