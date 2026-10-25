@@ -17,6 +17,7 @@ ou jogue no [Portal Pixel](https://hebersonmiliano.github.io/portal-jogos/jogo.h
 O jogo está completo, do começo ao final com créditos.
 
 - **Capítulos 1 a 3**: Reino da Brasa, Reino das Marés e Reino dos Ventos, cada um com mundo aberto, castelo e chefe.
+- **Lojas e serviços com brasas**: Mercador Pipo (garrafas, poções e fadas), Ferreira Brígida (escudo, túnica e botas), Pedras da Águia para viajar entre aldeias, Altares de Oferenda e 3 mercadores escondidos.
 - **Capítulos 4 e 5**: Fortaleza Sombria (Rei Umbra) e Coração do Abismo (11 salas de memória e a Sombra do Rei).
 - **Castelos com exploração de verdade** (52 salas no total), com mapa, bússola, chaves pequenas e chave mestra:
   - *Castelo da Brasa* (20 salas, térreo e subsolo): salas escuras, lava, orbes e pinos, Bastão de Brasa.

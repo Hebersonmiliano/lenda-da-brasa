@@ -369,6 +369,64 @@ Todo chefe tem uma fraqueza ligada a um item. Antes dela, a espada não faz dano
 | Sombra do Rei | Coração do Abismo | Fase 1: 4 chamas. Fase 2: o item de cada forma. Fase 3: golpe de luz carregado (segure o ataque) |
 | Guardião Estelar | Pico Estelar | Fase 1: flecha no olho aberto. Fase 2: bomba perto dele. Fase 3: puxe-o com o Gancho. Depois de cada uma, espada |
 
+## Brasas: lojas e serviços
+
+As **brasas** (contador laranja no topo da tela) são o dinheiro do jogo. Elas caem de inimigos, de arbustos e de baús, e o contador vai até 999.
+
+### Mercador Pipo — Vale de Lume
+
+Fica perto do topo do Vale de Lume, à direita do caminho.
+
+| Mercadoria | Preço | O que faz |
+| --- | --- | --- |
+| Garrafa vazia | 50 | Guarda poções e fadas. Você pode ter até 3 |
+| Poção vermelha | 30 | Enche toda a vida. Equipe a garrafa no botão B e use |
+| Fada na garrafa | 70 | Se a vida acabar, ela te levanta na hora com 4 corações. Também pode ser usada no B |
+
+![O Mercador Pipo no Vale de Lume](guia/54_mercador.png)
+
+![A loja do Pipo](guia/55_loja.png)
+
+### Ferreira Brígida — Vila de Conchas (Reino das Marés)
+
+| Equipamento | Preço | O que faz |
+| --- | --- | --- |
+| Escudo de Ferro | 80 | Sem atacar, bloqueia projéteis que vêm de frente |
+| Túnica Rubra | 150 | Você recebe metade do dano |
+| Botas Ligeiras | 100 | Você anda mais rápido |
+
+![A Ferreira Brígida na Vila de Conchas](guia/56_ferreira.png)
+
+![A loja da ferreira](guia/57_loja_ferreira.png)
+
+### Pedras da Águia — viagem rápida
+
+Há uma **Pedra da Águia** no Vale de Lume, na Vila de Conchas e na Aldeia dos Ventos. Por **15 brasas**, uma águia leva você a qualquer outra aldeia que você já tenha visitado.
+
+![Pedra da Águia](guia/58_pedra_aguia.png)
+
+### Altares de Oferenda
+
+Cada uma das três aldeias tem um **altar**. Ofereça **100 brasas** e a chama se acende: você ganha **1 pedaço de coração** (uma vez por altar).
+
+![Altar de Oferenda](guia/59_altar.png)
+
+### Mercadores escondidos
+
+Três vultos encapuzados vendem itens raros nas salas secretas:
+
+| Onde | Mercadorias |
+| --- | --- |
+| Câmara Esquecida, Castelo da Brasa (sala da parede oca) | **Amuleto da Onda** (120): a onda de brasa sai mesmo faltando 1 coração. Poção vermelha (20) |
+| Sala secreta do Castelo das Marés | Garrafa vazia (40), Fada (45), Poção vermelha (20) |
+| Câmara do Tesouro, Fortaleza Sombria (depois da armadilha) | **Recipiente de coração** (250, só um), Fada (40), Poção vermelha (20) |
+
+![O vulto escondido no Castelo da Brasa](guia/60_vulto.png)
+
+![A loja do vulto](guia/61_loja_vulto.png)
+
+**Dica:** antes do Rei Umbra e da Sombra do Rei, vá com as 3 garrafas cheias de fadas e com a Túnica Rubra.
+
 ## Segredos e dicas
 
 Junte **4 pedaços de coração** para ganhar um coração inteiro; o menu mostra quantos você tem.
@@ -390,6 +448,7 @@ Junte **4 pedaços de coração** para ganhar um coração inteiro; o menu mostr
 | Pedaço de coração | Observatório e Relicário (Lua) | Martelo nas armaduras; 3ª chave |
 | Pedaço de coração | Torre dos Ventos Negros (Fortaleza Sombria) | Pena para pular os buracos |
 | Pedaço de coração | Jardim Estelar (Estrela) | Acender os 4 braseiros a tempo |
+| Pedaço de coração | Altares de Oferenda (Vale de Lume, Vila de Conchas, Aldeia dos Ventos) | 100 brasas em cada |
 | 50 brasas | Uma sala selada em cada castelo e santuário | Parede oca ou parede de bomba |
 | 50 brasas | Câmara do Tesouro (Fortaleza Sombria) | Vencer a armadilha |
 

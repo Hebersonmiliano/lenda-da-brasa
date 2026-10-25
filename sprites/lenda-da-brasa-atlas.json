@@ -3319,6 +3319,69 @@
    "w": 40,
    "h": 40,
    "grupo": "Reino Sombrio — personagens"
+  },
+  "mercador": {
+   "x": 0,
+   "y": 928,
+   "w": 16,
+   "h": 16,
+   "grupo": "Comércio"
+  },
+  "mercador_1": {
+   "x": 16,
+   "y": 928,
+   "w": 16,
+   "h": 16,
+   "grupo": "Comércio"
+  },
+  "ferreira": {
+   "x": 32,
+   "y": 928,
+   "w": 16,
+   "h": 16,
+   "grupo": "Comércio"
+  },
+  "ferreira_1": {
+   "x": 48,
+   "y": 928,
+   "w": 16,
+   "h": 16,
+   "grupo": "Comércio"
+  },
+  "mercador_sombra": {
+   "x": 64,
+   "y": 928,
+   "w": 16,
+   "h": 16,
+   "grupo": "Comércio"
+  },
+  "mercador_sombra_1": {
+   "x": 80,
+   "y": 928,
+   "w": 16,
+   "h": 16,
+   "grupo": "Comércio"
+  },
+  "pedra_aguia": {
+   "x": 96,
+   "y": 928,
+   "w": 16,
+   "h": 16,
+   "grupo": "Comércio"
+  },
+  "altar_oferenda": {
+   "x": 112,
+   "y": 928,
+   "w": 16,
+   "h": 16,
+   "grupo": "Comércio"
+  },
+  "altar_oferenda_aceso": {
+   "x": 128,
+   "y": 928,
+   "w": 16,
+   "h": 16,
+   "grupo": "Comércio"
   }
  }
 }

@@ -984,20 +984,21 @@ function updatePlayer(dt){
   if(pressed.b&&p.bItem==='bombs'&&!shots.some(s=>s.bomb)){const v=p.face||[0,1];
     const bx=p.x+4+Math.sign(v[0])*10,by=p.y+6+Math.sign(v[1])*10;shots.push({bomb:true,x:bx,y:by,w:8,h:8,vx:0,vy:0,t:0});tone(300,200,.08,'square',.04);}
   if(pressed.b&&p.bItem==='lantern'){const [tx,ty]=facingTile();if(tileAt(tx,ty)==='J'){setTile(tx,ty,'F');burst(tx*TS+8,ty*TS+6,'#d8b4f0',14);tone(300,900,.25,'triangle',.05);onLit(tx,ty);}else tone(600,600,.05,'square',.03);}
+  if(pressed.b&&p.bItem&&p.bItem.startsWith('bottle')){useBottle(p.bItem);}
   if(pressed.b&&p.bItem==='hammer'){p.hammer=.3;p.hamDone=false;tone(200,120,.1,'square',.05);return;}
   if(pressed.b&&p.bItem==='hook'){const v=N8(p.face);
     shots.push({hook:true,st:'out',x:p.x+4+v[0]*6,y:p.y+6+v[1]*6,w:8,h:8,vx:v[0]*260,vy:v[1]*260,d:0,t:0});tone(700,1100,.1,'square',.04);return;}
   if(pressed.a){
     if(tryInteract())return;
     if(p.sword){p.attack=.24;p.swing++;SFX.sword();
-      if(p.hp>=p.maxHp&&!shots.some(s=>s.friendly)){const v=N8(p.face);
+      if((p.hp>=p.maxHp||(p.waveAmulet&&p.hp>=p.maxHp-2))&&!shots.some(s=>s.friendly)){const v=N8(p.face);
         shots.push({friendly:true,x:p.x+3+v[0]*10,y:p.y+4+v[1]*10,w:10,h:10,vx:v[0]*170,vy:v[1]*170,dir:v,t:0});setTimeout(SFX.wave,60);}
       swordHits();return;}
   }
   const av=aimVec();let dx=av?av[0]:0,dy=av?av[1]:0;
   if(dx||dy){
     setFace([dx,dy]);p.walk+=dt;
-    const sp=84*dt*(dx&&dy?Math.SQRT1_2:1);const r=moveEntity(p,dx*sp,dy*sp,true);
+    const sp=(p.gear.boots?102:84)*dt*(dx&&dy?Math.SQRT1_2:1);const r=moveEntity(p,dx*sp,dy*sp,true);
     // ajuda nas quinas: alinha ao meio-tile se bloqueado
     if(dy&&!dx&&r.by)slideAssist(p,0,dy,sp);
     if(dx&&!dy&&r.bx)slideAssist(p,dx,0,sp);
@@ -1029,7 +1030,7 @@ function updatePlayer(dt){
   if(dir){const to=neighbor(dir);if(to)startSlide(dir,to);else{p.x=Math.max(-6,Math.min(W-10,p.x));p.y=Math.max(-6,Math.min(PH-10,p.y));}}
 }
 function fallPit(){const p=player;tone(600,80,.5,'triangle',.06);SFX.hurt();p.hp-=1;burst(p.x+8,p.y+10,'#1e3a50',10);
-  if(p.hp<=0){p.hp=0;state='gameover';stateT=0;return;}
+  if(p.hp<=0&&!fairyRescue()){p.hp=0;state='gameover';stateT=0;return;}
   const e=cur.entry||{x:112,y:140};p.x=e.x;p.y=e.y;p.inv=1;p.kbt=0;toast('VOCÊ CAIU NO ABISMO');}
 function hammerBox(){const p=player,v=p.face||[0,1];return {x:p.x+8+v[0]*13-8,y:p.y+12+v[1]*12-8,w:16,h:16};}
 function hammerHit(){const b=hammerBox();let hit=false;
@@ -1107,11 +1108,11 @@ function damageEnemy(e,n,dir,src){
     else if(isSant(cur.id))maybeDrop(b.x,b.y,.3,.07);else maybeDrop(b.x,b.y,.32,.16);}
 }
 function maybeDrop(x,y,pe,ph){const r=Math.random();
-  if(r<ph)pickups.push({kind:'heart',x,y,t:0,life:8});else if(r<ph+pe)pickups.push({kind:Math.random()<.2?'ember5':'ember',x,y,t:0,life:8});}
+  if(r<ph)pickups.push({kind:'heart',x,y,t:0,life:8});else if(r<ph+pe)pickups.push({kind:Math.random()<.3?'ember5':'ember',x,y,t:0,life:8});}
 function hurtPlayer(n,fx,fy){
-  const p=player;if(p.inv>0||state!=='play')return;p.hp-=n;p.inv=1;SFX.hurt();
+  const p=player;if(p.inv>0||state!=='play')return;if(p.tunicLv>=2){p.dmgFrac=(p.dmgFrac||0)+n/2;n=Math.floor(p.dmgFrac);p.dmgFrac-=n;}p.hp-=n;p.inv=1;SFX.hurt();
   const dx=p.x+8-fx,dy=p.y+12-fy,l=Math.hypot(dx,dy)||1;p.kbx=dx/l*150;p.kby=dy/l*150;p.kbt=.16;p.attack=0;
-  if(p.hp<=0){p.hp=0;state='gameover';stateT=0;burst(p.x+8,p.y+10,'#c9461f',20);}
+  if(p.hp<=0){if(fairyRescue())return;p.hp=0;state='gameover';stateT=0;burst(p.x+8,p.y+10,'#c9461f',20);}
 }
 
 // ---------- INIMIGOS ----------
@@ -1370,8 +1371,10 @@ function updateShots(dt){
       if(boxSolid(s.x+3,s.y+3,4,4)){s.dead=true;burst(s.x+5,s.y+5,'#f0a030',6);}}
     else{if(s.kind==='umbra'&&umbraOrb(s))continue;const c=boxSolid(s.x+1,s.y+1,4,4)&&!CASTLE(cur.theme);if(c&&s.t>.1){s.dead=true;continue;}
       if(overlap(s,pb)){
-        // espada bloqueia projéteis quando parado de frente
-        s.dead=true;hurtPlayer(1,s.x+3,s.y+3);}}
+        // escudo de ferro: bloqueia projéteis que vêm de frente quando não está atacando
+        const f=player.face||[0,1],l=Math.hypot(s.vx,s.vy)||1;
+        if(player.shieldLv>=2&&!(player.attack>0)&&(s.vx*f[0]+s.vy*f[1])/l<-.5){s.dead=true;burst(s.x+3,s.y+3,'#c8c8d8',8);tone(1500,1100,.06,'square',.05);}
+        else{s.dead=true;hurtPlayer(1,s.x+3,s.y+3);}}}
   }
   shots=shots.filter(s=>!s.dead);
 }
@@ -1430,7 +1433,7 @@ function drawHUD(){
     if(k==='santuario'?!flags[SANCT[DEF[cur.id].s].flag]:k==='mares'?!flags.krakenDead:k==='ventos'?!flags.griffinDead:!flags.bossDead){ctx.fillStyle='#e0402a';ctx.fillRect(mx+(k==='santuario'?35:21),my+3,2,2);}}
   // slots B (item) e A (espada)
   for(const [sx,lab] of [[58,'B'],[80,'A']]){ctx.fillStyle=lab==='A'?'#e0402a':'#8fc06a';ctx.fillRect(sx,6,18,22);ctx.fillStyle='#120c0b';ctx.fillRect(sx+1,7,16,20);txt(lab,sx+9,0,'#efe2d0',8,'center');}
-  if(player.bItem){const it=ITEMS.find(i=>i[0]===player.bItem);ctx.drawImage(ICON[it[2]],62,12);}
+  if(player.bItem){const it=ITEMS.find(i=>i[0]===player.bItem);ctx.drawImage(itemIcon(it),62,12);}
   if(player.sword){if(player.swordLevel>=2)spr('espada_reinos_cima',81,9);else ctx.drawImage(ICON.sword,84,12);}
   // brasas e chaves
   ctx.fillStyle='#f08a2c';ctx.fillRect(108,7,3,6);ctx.fillRect(107,9,5,3);ctx.fillStyle='#ffd27a';ctx.fillRect(109,9,1,2);
@@ -1628,16 +1631,16 @@ function drawMenu(){
   panel(4,4,164,112,'#8fc06a','ITENS');
   if(curSlot)txt('JOGO '+curSlot,160,-2,'#a8968a',8,'right');
   ITEMS.forEach((it,i)=>{const x=14+(i%5)*30,y=16+Math.floor(i/5)*24,own=player.items[it[0]];
-    ctx.fillStyle='#10160f';ctx.fillRect(x,y,16,16);ctx.drawImage(own?ICON[it[2]]:SIL[it[2]],x+3,y+3);
+    ctx.fillStyle='#10160f';ctx.fillRect(x,y,16,16);ctx.drawImage(own?itemIcon(it):SIL[it[2]],x+3,y+3);
     if(own&&player.bItem===it[0]){ctx.fillStyle='#8fc06a';ctx.fillRect(x+2,y+15,12,1);}});
   {const x=14+(menu.i%5)*30,y=16+Math.floor(menu.i/5)*24,on=Math.floor(menu.t*4)%2===0;ctx.fillStyle=on?'#ffd27a':'#f08a2c';
     for(const [a,b] of [[-3,-3],[15,-3],[-3,15],[15,15]]){ctx.fillRect(x+a,y+b,4,1);ctx.fillRect(x+a+(a>0?3:0),y+b,1,4);ctx.fillRect(x+a,y+b+(b>0?3:0),4,1);}}
   // ITEM SELECIONADO
   panel(172,4,80,44,'#efe2d0','');
   const sel=ITEMS[menu.i],own=player.items[sel[0]];
-  ctx.fillStyle='#10160f';ctx.fillRect(178,9,16,16);ctx.drawImage(own?ICON[sel[2]]:SIL[sel[2]],181,12);
+  ctx.fillStyle='#10160f';ctx.fillRect(178,9,16,16);ctx.drawImage(own?itemIcon(sel):SIL[sel[2]],181,12);
   if(own&&player.bItem===sel[0])txt('EM B',200,12,'#8fc06a');
-  wrapText(own?sel[1]:'???',70).slice(0,2).forEach((l,j)=>txt(l,179,28+j*9,own?'#efe2d0':'#6a5e58'));
+  wrapText(own?itemName(sel):'???',70).slice(0,2).forEach((l,j)=>txt(l,179,28+j*9,own?'#efe2d0':'#6a5e58'));
   // CRISTAIS + PENDENTES
   panel(172,52,80,64,'#e8b04a','CRISTAIS');
   CRYSTAL_KEYS.forEach((k,i)=>spr(k,184+i*20,57,{sil:!flags.crystals[i]}));
@@ -1651,7 +1654,8 @@ function drawMenu(){
   [['boots',g.boots],['gloves',g.gloves],['flippers',g.flippers],['feather',g.feather]].forEach(([k,ok],i)=>{const x=22+i*36;ctx.fillStyle='#10160f';ctx.fillRect(x-3,167,16,16);ctx.drawImage(ok?ICON[k]:SIL[k],x,170);});
   // EQUIPAMENTO
   panel(172,120,80,84,'#e8b04a','EQUIPAMENTO');
-  [['sword',player.sword],['shield',player.shield],['tunic',true]].forEach(([k,ok],i)=>{const x=181+i*22;ctx.fillStyle='#10160f';ctx.fillRect(x-3,131,16,16);ctx.drawImage(ok?ICON[k]:SIL[k],x,134);});
+  [['sword',player.sword],['shield',player.shield],['tunic',true]].forEach(([k,ok],i)=>{const x=181+i*22;ctx.fillStyle='#10160f';ctx.fillRect(x-3,131,16,16);ctx.drawImage(ok?ICON[k]:SIL[k],x,134);
+    if((k==='shield'&&player.shieldLv>=2)||(k==='tunic'&&player.tunicLv>=2)){ctx.fillStyle=k==='tunic'?'#e0402a':'#c8c8d8';ctx.fillRect(x-3,146,16,2);}});
   txt(!player.sword?'SEM ESPADA':player.swordLevel>=2?'DOS REINOS':'APRENDIZ',212,151,player.swordLevel>=2?'#8ad4e8':'#a8968a',8,'center');
   txt('CORAÇÃO',212,162,'#a8968a',8,'center');
   drawHeartPieces(184,173,player.heartPieces||0);
@@ -1688,6 +1692,96 @@ function drawEnd(title,sub,lines,col){
   lines.forEach((l,i)=>txt(l,128,110+i*12,'#efe2d0',8,'center'));
   if(stateT>1&&Math.floor(stateT*2)%2===0)txt('APERTE A / ENTER',128,176,'#ffd27a',8,'center');
 }
+
+// ==== COMÉRCIO: mercadores, ferreira, garrafas, pedras da águia e altares ====
+let shop=null;
+const BOTTLES=['bottle1','bottle2','bottle3'];
+const bottlesOf=()=>{player.bottles=player.bottles||{};return player.bottles;};
+const emptyBottle=()=>BOTTLES.find(b=>player.items[b]&&bottlesOf()[b]==='empty');
+const BOT_NAME={empty:'GARRAFA VAZIA',red:'POÇÃO VERMELHA',fairy:'FADA NA GARRAFA'};
+function itemIcon(it){if(it[2]==='bottle'){const c=bottlesOf()[it[0]]||'empty';return ICON['bottle_'+c]||ICON.bottle;}return ICON[it[2]];}
+function itemName(it){return it[2]==='bottle'?(BOT_NAME[bottlesOf()[it[0]]||'empty']):it[1];}
+{const mkB=(col,extra)=>{const c=document.createElement('canvas');c.width=10;c.height=10;const g=c.getContext('2d');
+  ICON_SRC.bottle.forEach((r,y)=>{for(let x=0;x<10;x++){const ch=r[x];if(!ch||!IPAL[ch])continue;g.fillStyle=ch==='c'?(col||'#26323a'):IPAL[ch];g.fillRect(x,y,1,1);}});if(extra)extra(g);return c;};
+  ICON.bottle_empty=mkB(null);ICON.bottle_red=mkB('#e0402a');ICON.bottle_fairy=mkB('#f0b0e0',g=>{g.fillStyle='#fff6e6';g.fillRect(4,5,2,2);g.fillStyle='#ffe08a';g.fillRect(3,5,1,1);g.fillRect(6,5,1,1);});}
+function useBottle(id){const B=bottlesOf(),c=B[id]||'empty',p=player;
+  if(c==='red'){p.hp=p.maxHp;B[id]='empty';tone(500,1200,.3,'triangle',.06);burst(p.x+8,p.y+8,'#e0402a',16);toast('VIDA CHEIA!');saveSoon();}
+  else if(c==='fairy'){p.hp=Math.min(p.maxHp,p.hp+8);B[id]='empty';tone(900,1800,.4,'triangle',.06);burst(p.x+8,p.y+8,'#f0b0e0',20);toast('A FADA CUROU 4 CORAÇÕES!');saveSoon();}
+  else toast('A GARRAFA ESTÁ VAZIA');}
+function fairyRescue(){const B=bottlesOf(),id=BOTTLES.find(b=>player.items[b]&&B[b]==='fairy');if(!id)return false;
+  B[id]='empty';const p=player;p.hp=Math.min(p.maxHp,8);p.inv=2;tone(900,1800,.5,'triangle',.07);tone(1200,2400,.4,'sine',.05,.2);burst(p.x+8,p.y+8,'#f0b0e0',30);toast('UMA FADA SAIU DA GARRAFA E TE SALVOU!');saveSoon();return true;}
+function givePiece(){player.getItem='coracao_cheio';player.heartPieces=(player.heartPieces||0)+1;
+  if(player.heartPieces>=4){player.heartPieces=0;player.maxHp+=2;player.hp=player.maxHp;return 'Você juntou 4 PEDAÇOS DE CORAÇÃO! Sua vida máxima aumentou.';}
+  return 'Um PEDAÇO DE CORAÇÃO! Junte 4 para ganhar um coração a mais ('+player.heartPieces+'/4).';}
+// mercadorias
+const W_BOTTLE=(price)=>({name:'GARRAFA VAZIA',icon:'bottle_empty',price,desc:'Guarda poções e fadas. Você pode ter até 3.',can:()=>BOTTLES.every(b=>player.items[b])?'VOCÊ JÁ TEM 3 GARRAFAS':null,
+  buy:()=>{const b=BOTTLES.find(x=>!player.items[x]);player.items[b]=true;bottlesOf()[b]='empty';if(!player.bItem)player.bItem=b;return 'Você comprou uma GARRAFA! Escolha-a no menu de itens para usar no botão B.';}});
+const W_RED=(price)=>({name:'POÇÃO VERMELHA',icon:'bottle_red',price,desc:'Enche toda a vida. Use no botão B. Precisa de uma garrafa vazia.',can:()=>!BOTTLES.some(b=>player.items[b])?'PRECISA DE UMA GARRAFA':!emptyBottle()?'NENHUMA GARRAFA VAZIA':null,
+  buy:()=>{bottlesOf()[emptyBottle()]='red';return 'POÇÃO VERMELHA na garrafa! Equipe a garrafa no B e beba quando precisar.';}});
+const W_FAIRY=(price)=>({name:'FADA NA GARRAFA',icon:'bottle_fairy',price,desc:'Se a sua vida acabar, ela te levanta na hora. Também cura 4 corações no B.',can:()=>!BOTTLES.some(b=>player.items[b])?'PRECISA DE UMA GARRAFA':!emptyBottle()?'NENHUMA GARRAFA VAZIA':null,
+  buy:()=>{bottlesOf()[emptyBottle()]='fairy';return 'Uma FADA voa para dentro da garrafa! Se você cair, ela te salva.';}});
+const SHOPS={
+ pipo:{title:'MERCADOR PIPO',keeper:'mercador',hello:'Bem-vindo! Brasas valem ouro por aqui.',items:[W_BOTTLE(50),W_RED(30),W_FAIRY(70)]},
+ brigida:{title:'FERREIRA BRÍGIDA',keeper:'ferreira',hello:'Metal bom e martelo firme. O que vai ser?',items:[
+  {name:'ESCUDO DE FERRO',icon:'shield',price:80,desc:'Parado ou andando sem atacar, bloqueia projéteis que vêm de frente.',can:()=>player.shieldLv>=2?'VOCÊ JÁ TEM':!player.shield?'PRIMEIRO, UM ESCUDO':null,buy:()=>{player.shieldLv=2;player.getItem='escudo';return 'ESCUDO DE FERRO! Flechas, bolhas e magias que vierem de frente batem nele e somem.';}},
+  {name:'TÚNICA RUBRA',icon:'tunic',price:150,desc:'Tecido com fios de brasa: você recebe metade do dano.',can:()=>player.tunicLv>=2?'VOCÊ JÁ TEM':null,buy:()=>{player.tunicLv=2;return 'TÚNICA RUBRA! Agora os golpes inimigos tiram metade da vida.';}},
+  {name:'BOTAS LIGEIRAS',icon:'boots',price:100,desc:'Você anda mais rápido por todo o reino.',can:()=>player.gear.boots?'VOCÊ JÁ TEM':null,buy:()=>{player.gear.boots=true;return 'BOTAS LIGEIRAS! Seus passos ficaram mais rápidos.';}}]},
+ vulto_brasa:{title:'VULTO DA BRASA',keeper:'mercador_sombra',hello:'Shh... ninguém sabe que estou aqui. Preços especiais.',items:[
+  {name:'AMULETO DA ONDA',icon:'amuleto',price:120,desc:'A espada lança a onda de brasa mesmo faltando 1 coração.',can:()=>player.waveAmulet?'VOCÊ JÁ TEM':null,buy:()=>{player.waveAmulet=true;return 'AMULETO DA ONDA! A onda de brasa sai mesmo faltando até 1 coração.';}},W_RED(20)]},
+ vulto_mares:{title:'VULTO DAS MARÉS',keeper:'mercador_sombra',hello:'Achou a sala secreta, é? Então merece um desconto.',items:[W_BOTTLE(40),W_FAIRY(45),W_RED(20)]},
+ vulto_sombra:{title:'VULTO SOMBRIO',keeper:'mercador_sombra',hello:'Até aqui você chegou... Tenho algo raro para a batalha final.',items:[
+  {name:'RECIPIENTE DE CORAÇÃO',icon:'heart',price:250,desc:'Um coração inteiro a mais. Só tenho um.',can:()=>flags.boughtHeart?'ESGOTADO':null,buy:()=>{flags.boughtHeart=true;player.maxHp+=2;player.hp=player.maxHp;player.getItem='recipiente_coracao';return 'RECIPIENTE DE CORAÇÃO! Sua vida máxima aumentou.';}},W_FAIRY(40),W_RED(20)]}
+};
+function openShop(k){const S=SHOPS[k];shop={k,S,i:0,t:0,msg:S.hello};state='shop';tone(700,900,.08,'square',.04);}
+function updateShop(dt){shop.t+=dt;const n=shop.S.items.length;
+  if(pressed.up){shop.i=(shop.i+n-1)%n;tone(620,620,.03,'square',.03);}
+  if(pressed.down){shop.i=(shop.i+1)%n;tone(620,620,.03,'square',.03);}
+  if(pressed.a){const it=shop.S.items[shop.i],why=it.can&&it.can();
+    if(why){shop.msg=why;tone(200,150,.15,'square',.05);}
+    else if(player.embers<it.price){shop.msg='FALTAM '+(it.price-player.embers)+' BRASAS';tone(200,150,.15,'square',.05);}
+    else{player.embers-=it.price;const m=it.buy();SFX.chest();shop=null;state='play';showDialog([m],()=>{saveSoon();});}}
+  else if(pressed.b||pressed.esc||pressed.start){shop=null;state='play';player.getItem=null;tone(500,700,.08,'square',.04);}}
+function shopIcon(name,x,y){if(ICON[name]){ctx.drawImage(ICON[name],x+3,y+3);}else if(name==='heart'){spr('recipiente_coracao',x,y);}else if(name==='heart_piece'){spr('coracao_cheio',x+4,y+4);}else if(name==='amuleto'){ctx.fillStyle='#e8b04a';ctx.fillRect(x+7,y+2,2,3);ctx.fillStyle='#1a1210';ctx.fillRect(x+4,y+5,8,8);ctx.fillStyle='#f08a2c';ctx.fillRect(x+5,y+6,6,6);ctx.fillStyle='#ffd27a';ctx.fillRect(x+6,y+7,2,2);}}
+function drawShop(){const S=shop.S;ctx.fillStyle='rgba(6,5,5,.75)';ctx.fillRect(0,0,W,H);
+  panel(8,8,240,190,'#e8b04a',S.title);
+  {const kn=S.keeper+'_1';spr(Math.floor(shop.t*2)%2&&ATLAS[kn]?kn:S.keeper,18,20);}
+  wrapText(shop.msg,180).slice(0,2).forEach((l,j)=>txt(l,40,20+j*10,'#efe2d0'));
+  // brasas
+  ctx.fillStyle='#f08a2c';ctx.fillRect(200,42,3,6);ctx.fillRect(199,44,5,3);txt(String(player.embers),208,40,'#ffd27a');
+  S.items.forEach((it,i)=>{const y=56+i*30,on=i===shop.i,why=it.can&&it.can(),poor=player.embers<it.price;
+    ctx.fillStyle=on?'#3a2a1a':'#1d1514';ctx.fillRect(16,y,224,26);if(on){ctx.fillStyle='#ffd27a';ctx.fillRect(16,y,2,26);}
+    ctx.fillStyle='#10160f';ctx.fillRect(22,y+5,16,16);shopIcon(it.icon,22,y+5);
+    txt(it.name,44,y+4,why?'#6a5e58':'#efe2d0');
+    ctx.fillStyle='#f08a2c';ctx.fillRect(44,y+16,3,5);txt(String(it.price),50,y+14,poor||why?'#8a5a4a':'#ffd27a');
+    if(why)txt(why,236,y+14,'#a8968a',8,'right');});
+  const it=S.items[shop.i];const yy=56+S.items.length*30+4;
+  wrapText(it.desc,220).slice(0,3).forEach((l,j)=>txt(l,18,yy+j*10,'#a8968a'));
+  if(Math.floor(shop.t*2)%2===0)txt('A COMPRAR · B SAIR',128,186,'#ffd27a',8,'center');}
+// pedras da águia (viagem rápida) e altares de oferenda
+const EAGLE_STOPS=[{id:'w11',name:'VALE DE LUME',to:['w11',88,124,'down'],ok:()=>true},{id:'m11',name:'VILA DE CONCHAS',to:['m11',184,124,'down'],ok:()=>visited.has('m11')},{id:'v11',name:'ALDEIA DOS VENTOS',to:['v11',184,124,'down'],ok:()=>visited.has('v11')}];
+function talkEagle(){const opts=EAGLE_STOPS.filter(s=>s.id!==cur.id&&s.ok());
+  if(!opts.length){showDialog(['Uma PEDRA DA ÁGUIA. Quando você conhecer outras aldeias, uma águia poderá levá-lo até lá por 15 brasas.']);return;}
+  shop={k:'eagle',i:0,t:0,msg:'Uma águia pousa na pedra. Por 15 brasas, ela leva você a outra aldeia.',S:{title:'PEDRA DA ÁGUIA',keeper:'pedra_aguia',hello:'',items:opts.map(o=>({name:o.name,icon:'feather',price:15,desc:'Voa até '+o.name+'.',buy:()=>{startFade(()=>enterScreen(...o.to));return null;}}))}};
+  state='shop';}
+function talkAltar(id){const f='altar_'+id;
+  if(flags[f]){showDialog(['A chama do altar arde tranquila. A sua oferenda foi aceita.']);return;}
+  shop={k:'altar',i:0,t:0,msg:'"Ofereça 100 brasas à chama e receba um pedaço de vida."',S:{title:'ALTAR DE OFERENDA',keeper:'altar_oferenda',hello:'',items:[{name:'OFERECER 100 BRASAS',icon:'heart_piece',price:100,desc:'Recompensa: 1 pedaço de coração (uma vez por altar).',buy:()=>{flags[f]=true;burst(player.x+8,player.y-4,'#f08a2c',20);return 'A chama do altar se acende! '+givePiece();}}]}};state='shop';}
+// compras que levam a outra tela fecham a loja sem diálogo
+{const ub=updateShop;updateShop=function(dt){if(shop&&pressed.a){const it=shop.S.items[shop.i];if(!(it.can&&it.can())&&player.embers>=it.price&&(shop.k==='eagle')){player.embers-=it.price;shop=null;state='play';SFX.door();it.buy();return;}}ub(dt);};}
+Object.assign(NPCS,{});
+const addNpc=(id,n)=>{(NPCS[id]=NPCS[id]||[]).push(n);};
+const at=(tx,ty,f,talk,cond,big)=>({x:tx*16,y:ty*16-2,box:{x:tx*16+1,y:ty*16+2,w:14,h:14},f,talk,cond});
+addNpc('w11',at(13,2,['mercador','mercador_1'],()=>openShop('pipo')));
+addNpc('w11',at(4,8,['pedra_aguia','pedra_aguia'],talkEagle));
+addNpc('w11',{...at(2,2,['altar_oferenda','altar_oferenda'],()=>talkAltar('w11')),get f(){return flags.altar_w11?['altar_oferenda_aceso','altar_oferenda_aceso']:['altar_oferenda','altar_oferenda'];}});
+addNpc('m11',at(5,7,['ferreira','ferreira_1'],()=>openShop('brigida')));
+addNpc('m11',at(13,8,['pedra_aguia','pedra_aguia'],talkEagle));
+addNpc('m11',{...at(2,1,['altar_oferenda','altar_oferenda'],()=>talkAltar('m11')),get f(){return flags.altar_m11?['altar_oferenda_aceso','altar_oferenda_aceso']:['altar_oferenda','altar_oferenda'];}});
+addNpc('v11',at(13,8,['pedra_aguia','pedra_aguia'],talkEagle));
+addNpc('v11',{...at(2,1,['altar_oferenda','altar_oferenda'],()=>talkAltar('v11')),get f(){return flags.altar_v11?['altar_oferenda_aceso','altar_oferenda_aceso']:['altar_oferenda','altar_oferenda'];}});
+addNpc('d20',at(8,3,['mercador_sombra','mercador_sombra_1'],()=>openShop('vulto_brasa')));
+addNpc('c17',at(8,3,['mercador_sombra','mercador_sombra_1'],()=>openShop('vulto_mares')));
+addNpc('ru10',at(7,1,['mercador_sombra','mercador_sombra_1'],()=>openShop('vulto_sombra'),()=>flags.tr_ru10));
 
 // ==== CAPÍTULO FINAL: Reino Sombrio, Rei Umbra, Coração do Abismo ====
 GATE_X.ru0=['w11',192,124,'down'];GATE_X.ax0=['w11',192,124,'down'];
@@ -1826,7 +1920,7 @@ function finalBossDown(e){
         showDialog(['A luz da Espada dos Reinos atravessa o Coração do Abismo...','A SOMBRA DO REI se desfaz em mil brasas. Os onze emblemas sobem ao céu e voltam a brilhar sobre os reinos.','Quando a luz se apaga, você está de volta ao Vale de Lume. E alguém espera por você.','PRINCESA LÍRIAN: Você voltou, Lume! O Reino da Brasa está livre... graças à sua coragem.','E assim a lenda da brasa passou de boca em boca, por todos os reinos.'],()=>{saveNow();state='credits';stateT=0;credY=0;});});},700);}
 }
 function finalUpdate(dt){
-  const p=player;if(!cur)return;
+  const p=player;if(!cur)return;if(p.embers>999)p.embers=999;
   if(isAbyss()&&p.sword&&keys.a&&!p.pulling&&!p.jump){p.charge=(p.charge||0)+dt;if(p.charge>.8&&!p.chargeReady){p.chargeReady=true;tone(900,1800,.2,'triangle',.05);burst(p.x+8,p.y+8,'#fff0b0',10);}}
   else{if(p.chargeReady&&state==='play'){for(let i=0;i<8;i++){const a=i*Math.PI/4,v=[Math.cos(a),Math.sin(a)];shots.push({friendly:true,light:true,x:p.x+3,y:p.y+4,w:10,h:10,vx:v[0]*165,vy:v[1]*165,dir:v,t:0});}
       tone(600,1800,.35,'triangle',.06);burst(p.x+8,p.y+10,'#fff8d8',24);}
@@ -1888,6 +1982,7 @@ function loop(now){
       updateParts(dt);}
     else if(state==='cine'){cine.t+=dt;updateParts(dt);if(cine.t>=cine.dur){const f=cine.done;state='play';cine=null;if(f)f();}}
     else if(state==='credits'||state==='postcredits'){updateCredits(dt);}
+    else if(state==='shop'){if(shop)updateShop(dt);else state='play';}
     else if(state==='slide'){trans.t+=dt/.55;if(trans.t>=1){trans=null;state='play';}}
     else if(state==='fade'){fade.t+=dt/.5;if(fade.t>=.5&&!fade.done){fade.done=true;fade.fn();}if(fade.t>=1){fade=null;if(state==='fade')state='play';}}
     else if(state==='gameover'){updateParts(dt);if(stateT>1&&(pressed.a||pressed.start)){player.hp=player.maxHp;player.inv=1.5;
@@ -1909,6 +2004,7 @@ function loop(now){
     if(state==='dialog')drawDialog();
     if(toastT>0&&state==='play'){ctx.globalAlpha=Math.min(1,toastT*2);ctx.font=`8px ${FONT}`;const tw=ctx.measureText(toastMsg).width;ctx.fillStyle='rgba(13,9,8,.85)';ctx.fillRect(128-tw/2-6,HUD+18,tw+12,13);txt(toastMsg,128,HUD+20,'#ffd27a',8,'center');ctx.globalAlpha=1;}
     if(state==='menu'&&menu)drawMenu();
+    if(state==='shop'&&shop)drawShop();
     if(state==='pause')drawPause();
     if(state==='dmap')drawDmap();
     if(state==='fade'&&fade){ctx.fillStyle=`rgba(0,0,0,${1-Math.abs(fade.t*2-1)})`;ctx.fillRect(0,HUD,W,PH);}

@@ -875,8 +875,25 @@ for f in (None,'gelo','pedra','voo','blindada','olho'):
     final_e['sombra_rei'+('_'+f if f else '')]=sk(f)
 final_e['sombra_rei_1']=sk(None,2); final_e['sombra_rei_dano']=flash(sk(None))
 # =============== MONTAGEM DA FOLHA ===============
+
+# =============== COMÉRCIO: mercadores, ferreira, pedra da águia, altar ===============
+shop={}
+MERC=["....kkkk","...knnnn","..knnnnn",".kkkkkkk","...kssss","...kskss","...kssss","....kSSs","...kvvvv","..kvvyvv",".kvvvyvv",".ksvvvvv","..kvvvvv","..knnnnn","..knnkkn","..kkk..k"]
+shop['mercador']=grid(mirror('mercador',MERC)); shop['mercador_1']=shift(shop['mercador'],0,-1)
+shop['ferreira']=recolor(shop['mercador'],{'n':'h','N':'R','v':'a','y':'G'}); shop['ferreira_1']=shift(shop['ferreira'],0,-1)
+HOOD=["....kkkk","...kzzzz","..kzzzzz",".kzzZZZZ",".kzZkkkk",".kzkkLkk",".kzkkkkk","..kzkkkk","..kzzzzz",".kzzzzzz",".kzzZzzz",".kzzZzzz","kzzzZzzz","kzzzzzzz","kzzzzzzz","kkkkkkkk"]
+shop['mercador_sombra']=grid(mirror('mercador_sombra',HOOD)); shop['mercador_sombra_1']=shift(shop['mercador_sombra'],0,-1)
+def stone_eagle():
+    rows=["................","......kkkk......",".....kGGGGk.....","..kk.kGkGGk.kk..",".kGGkkGGGGkkGGk.",".kGGGGGyyGGGGGk.","..kGGGGGGGGGGk..","...kkGGGGGGkk...",".....kGGGGk.....","....kaaaaaak....","...kaaaaaaaak...","...kaAaaaaAak...","...kaaaaaaaak...","..kaaaaaaaaaak..","..kkkkkkkkkkkk..","................"]
+    return grid(check('pedra_aguia',rows,16))
+shop['pedra_aguia']=stone_eagle()
+ALT=["................","................","................","....kkkkkkkk....","...kaaaaaaaak...","...kAAAAAAAAk...","....kaaaaaak....",".....kaaaak.....",".....kaAaak.....",".....kaaaak.....",".....kaAaak.....","....kaaaaaak....","...kaaaaaaaak...","...kAAAAAAAAk...","...kkkkkkkkkk...","................"]
+shop['altar_oferenda']=grid(check('altar',ALT,16))
+LIT=[r for r in ALT]; LIT[0]=".......E........"[:16]; LIT[1]="......eEe......."; LIT[2]=".....eoEoe......"; LIT[3]="....kkkkkkkk...."
+shop['altar_oferenda_aceso']=grid(check('altar2',LIT,16))
+
 SECTIONS=[('Herói — Lume',{**hero_sprites,**weapons}),('Herói — ataques',attack),('Inimigos',enemies),('Chefe',bosses),
-          ('Personagens',chars),('Objetos e itens',objs),('Cenário — Reino da Brasa',tiles),('Inimigos — Marés',enemies_m),('Chefe — Kraken',bosses_m),('Personagens — Marés',chars_m),('Cenário — Reino das Marés',tiles_m),('Inimigos — Ventos',enemies_v),('Chefe — Grifo',bosses_v),('Personagens e espada — Ventos',chars_v),('Cenário — Reino dos Ventos',tiles_v),('Santuários — mini-chefes',enemies_s),('Santuários — cenário',tiles_s),('Masmorras — mecanismos',mech),('Santuários II — cenário',tiles_s2),('Santuários II — objetos',objs_s2),('Santuários II — inimigos',enemies_s2),('Reino Sombrio — cenário',final_t),('Reino Sombrio — personagens',final_e)]
+          ('Personagens',chars),('Objetos e itens',objs),('Cenário — Reino da Brasa',tiles),('Inimigos — Marés',enemies_m),('Chefe — Kraken',bosses_m),('Personagens — Marés',chars_m),('Cenário — Reino das Marés',tiles_m),('Inimigos — Ventos',enemies_v),('Chefe — Grifo',bosses_v),('Personagens e espada — Ventos',chars_v),('Cenário — Reino dos Ventos',tiles_v),('Santuários — mini-chefes',enemies_s),('Santuários — cenário',tiles_s),('Masmorras — mecanismos',mech),('Santuários II — cenário',tiles_s2),('Santuários II — objetos',objs_s2),('Santuários II — inimigos',enemies_s2),('Reino Sombrio — cenário',final_t),('Reino Sombrio — personagens',final_e),('Comércio',shop)]
 if BAD:
     for b in BAD: print('LINHA COM TAMANHO ERRADO:',b)
 SHEET_W=256
@@ -938,7 +955,7 @@ prev.convert('RGB').save(os.path.join(OUT,'lenda-da-brasa-preview.png'))
 with zipfile.ZipFile(os.path.join(OUT,'lenda-da-brasa-sprites.zip'),'w',zipfile.ZIP_DEFLATED) as z:
     z.write(os.path.join(OUT,'lenda-da-brasa-sprites.png'),'lenda-da-brasa-sprites.png')
     z.write(os.path.join(OUT,'lenda-da-brasa-atlas.json'),'lenda-da-brasa-atlas.json')
-    pastas={'Herói — Lume':'heroi','Herói — ataques':'heroi','Inimigos':'inimigos','Chefe':'chefe','Personagens':'personagens','Objetos e itens':'objetos','Cenário — Reino da Brasa':'cenario','Inimigos — Marés':'mares/inimigos','Chefe — Kraken':'mares/chefe','Personagens — Marés':'mares/personagens','Cenário — Reino das Marés':'mares/cenario','Inimigos — Ventos':'ventos/inimigos','Chefe — Grifo':'ventos/chefe','Personagens e espada — Ventos':'ventos/personagens','Cenário — Reino dos Ventos':'ventos/cenario','Santuários — mini-chefes':'santuarios/inimigos','Santuários — cenário':'santuarios/cenario','Masmorras — mecanismos':'masmorras','Santuários II — cenário':'santuarios2/cenario','Santuários II — objetos':'santuarios2/objetos','Santuários II — inimigos':'santuarios2/inimigos','Reino Sombrio — cenário':'final/cenario','Reino Sombrio — personagens':'final/personagens'}
+    pastas={'Herói — Lume':'heroi','Herói — ataques':'heroi','Inimigos':'inimigos','Chefe':'chefe','Personagens':'personagens','Objetos e itens':'objetos','Cenário — Reino da Brasa':'cenario','Inimigos — Marés':'mares/inimigos','Chefe — Kraken':'mares/chefe','Personagens — Marés':'mares/personagens','Cenário — Reino das Marés':'mares/cenario','Inimigos — Ventos':'ventos/inimigos','Chefe — Grifo':'ventos/chefe','Personagens e espada — Ventos':'ventos/personagens','Cenário — Reino dos Ventos':'ventos/cenario','Santuários — mini-chefes':'santuarios/inimigos','Santuários — cenário':'santuarios/cenario','Masmorras — mecanismos':'masmorras','Santuários II — cenário':'santuarios2/cenario','Santuários II — objetos':'santuarios2/objetos','Santuários II — inimigos':'santuarios2/inimigos','Reino Sombrio — cenário':'final/cenario','Reino Sombrio — personagens':'final/personagens','Comércio':'comercio'}
     for title,group in SECTIONS:
         for name,img in group.items():
             b=io.BytesIO(); img.save(b,'PNG'); z.writestr(f'{pastas[title]}/{name}.png',b.getvalue())
