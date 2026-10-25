@@ -12,6 +12,8 @@ ou jogue no [Portal Pixel](https://hebersonmiliano.github.io/portal-jogos/jogo.h
 
 ![Capa](capa.png)
 
+**Versão atual: v1.3** · veja as [novidades de cada versão](CHANGELOG.md).
+
 ## O que dá para jogar
 
 O jogo está completo, do começo ao final com créditos.

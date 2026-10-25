@@ -361,7 +361,7 @@ Todo chefe tem uma fraqueza ligada a um item. Antes dela, a espada não faz dano
 | Salamandra de Lava | Santuário do Fogo | Desvie das investidas. Quando ela bate na parede, fica tonta: golpeie |
 | Caranguejo Rei | Gruta das Correntes | Vire-o de costas com o Gancho e golpeie |
 | Escorpião Dourado | Templo do Sol | Flecha no olho deixa ele tonto; depois, espada |
-| Flor Devoradora | Santuário da Floresta | Ponha uma bomba quando a boca abrir; murcha, ela leva golpes |
+| Flor Devoradora | Santuário da Floresta | Quando a boca abrir, o vento suga tudo: solte a bomba perto dela, deixe o vento puxar para dentro, ela murcha e leva golpes |
 | Espectro | Santuário da Sombra | Acenda as 4 chamas da sala para ele aparecer e golpeie antes que as apague |
 | Yeti das Neves | Santuário do Gelo | Congele-o com o Bastão de Gelo e golpeie |
 | Cavaleiro da Lua | Ruínas da Lua | Uma martelada racha a armadura por alguns segundos; golpeie nesse tempo |

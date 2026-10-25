@@ -481,7 +481,7 @@ room('sl17', K, 2, 0, 1, 'Galho Seco', [
 "################"], [['harpy', 7, 3]], chests={(8, 5): 'piece'})
 STAIRS += [(('sl6', 7, 3), ('sl9', 7, 3)), (('sl11', 13, 1), ('sl14', 13, 8))]
 sanct('floresta', K, 3, 'sl15', 'plant', 'sl0', 'mata',
-      ['A FLOR DEVORADORA guarda o Pendente da Floresta!', 'Ela abre a boca de tempos em tempos... sempre com muita fome.'])
+      ['A FLOR DEVORADORA guarda o Pendente da Floresta!', 'Quando abre a boca, ela SUGA tudo ao redor com uma rajada de vento... até o que não devia engolir.'])
 region('mata', 'forest', 'Floresta Antiga', [
 "TTTTTTTTTTTTTTTT",
 "TTTTTTT#N#TTTTTT",
