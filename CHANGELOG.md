@@ -1,5 +1,9 @@
 # Novidades — Lenda da Brasa
 
+## v1.5 — Correções
+- O **Escudo de Ferro** agora aparece prateado no menu de equipamentos, diferente do escudo comum.
+- **Câmara da Pena** (Castelo dos Ventos): quem subia pela escada com os pinos laranja levantados ficava preso no cercado em volta dela. Agora, se você chega cercado por pinos sem um orbe por perto, os pinos abaixam sozinhos.
+
 ## v1.4 — Mapa Mundi
 - Nova tela de **Mapa Mundi**: aperte **TAB** (ou SELECT no controle) ao ar livre, ou escolha MAPA MUNDI no menu de pausa.
 - Mostra os 4 reinos — Brasa, Marés, Ventos e Sombrio — em abas (ESQUERDA/DIREITA para trocar), com o **nome de cada vila, castelo e santuário** e a posição de cada um.
