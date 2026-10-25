@@ -1785,8 +1785,8 @@ function drawTitleBg(t){
   titleEmbers=titleEmbers.filter(q=>q.life>0);ctx.globalAlpha=1;
 }
 // ---------- VERSÃO E NOVIDADES ----------
-const VERSAO='1.3';
-const NOVIDADE_TITULO='NOVO v1.3: A FLOR AGORA SUGA AS BOMBAS!';
+const VERSAO='1.4';
+const NOVIDADE_TITULO='NOVO v1.4: MAPA MUNDI! APERTE TAB';
 let versaoVista=null;try{versaoVista=localStorage.getItem('lenda.versaoVista');}catch(e){}
 function marcarVersaoVista(){if(versaoVista===VERSAO)return;versaoVista=VERSAO;try{localStorage.setItem('lenda.versaoVista',VERSAO);}catch(e){}}
 function drawTitle(t){

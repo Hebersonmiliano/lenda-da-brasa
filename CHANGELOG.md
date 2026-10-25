@@ -1,5 +1,11 @@
 # Novidades — Lenda da Brasa
 
+## v1.4 — Mapa Mundi
+- Nova tela de **Mapa Mundi**: aperte **TAB** (ou SELECT no controle) ao ar livre, ou escolha MAPA MUNDI no menu de pausa.
+- Mostra os 4 reinos — Brasa, Marés, Ventos e Sombrio — em abas (ESQUERDA/DIREITA para trocar), com o **nome de cada vila, castelo e santuário** e a posição de cada um.
+- Destaca onde o herói está agora.
+- Dentro de um castelo, o TAB continua abrindo o mapa daquele castelo, como sempre.
+
 ## v1.3 — A Flor Devoradora suga as bombas
 - No Santuário da Floresta, a Flor Devoradora abre a boca e solta uma **rajada de vento que suga tudo**: folhas, o herói e as **bombas**.
 - Coloque uma bomba quando ela abrir a boca: o vento puxa a bomba para dentro, a flor engole, leva dano e fica murcha. Aí é hora da espada.
