@@ -1,5 +1,9 @@
 # Novidades — Lenda da Brasa
 
+## v1.6 — Chefe final mais justo
+- **Sombra do Rei, fase 2:** quando ela muda de forma, o item certo vai **sozinho para o botão B**. Nada de abrir o menu no meio da luta: é só apertar B e depois a espada.
+- Na fase final, a **Pena** também vai sozinha para o botão B, para pular as ondas sombrias.
+
 ## v1.5.1 — Câmara da Lua Cheia
 - **Ruínas da Lua, Câmara da Lua Cheia**: depois de pegar a Chave Mestra, o herói ficava preso do lado esquerdo, atrás dos pinos laranja, porque o único orbe ficava do outro lado. Agora há um segundo orbe do lado esquerdo: é só bater nele com a espada.
 

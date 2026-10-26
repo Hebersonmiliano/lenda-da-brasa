@@ -335,13 +335,13 @@ Cada sala é um **eco** de um lugar por onde você passou, tingido de roxo. A ba
 A luta tem **3 fases**; as marcas douradas na barra de vida mostram onde cada uma termina.
 
 1. **Luz.** A Sombra é quase invisível e a espada a atravessa. Acenda as **4 chamas** dos cantos com o Bastão de Brasa: ela aparece por alguns segundos. Golpeie até ela engolir a luz e repita.
-2. **Elementos.** A cada 5 segundos ela muda de forma. Use o item certo para desfazer a forma e então ataque com a espada:
+2. **Elementos.** A cada 5 segundos ela muda de forma. O item certo vai **sozinho para o botão B**: aperte B para desfazer a forma e então ataque com a espada:
    - **Gelo:** Bastão de Brasa
    - **Pedra:** Bomba
    - **Alada:** Gancho
    - **Blindada:** Martelo
    - **Olho:** Flecha
-3. **Final.** O chão desaba e sobram ilhas de pedra. Só a **luz carregada** fere: **segure o botão de ataque** até a espada brilhar e solte para disparar 8 raios de luz. Pule as **ondas sombrias** com a **Pena** e não caia nos buracos entre as ilhas.
+3. **Final.** O chão desaba e sobram ilhas de pedra. Só a **luz carregada** fere: **segure o botão de ataque** até a espada brilhar e solte para disparar 8 raios de luz. Pule as **ondas sombrias** com a **Pena** (ela já vai para o botão B) e não caia nos buracos entre as ilhas.
 
 ![Fase 1: as chamas revelam a Sombra](guia/50_sombra_fase1.png)
 
