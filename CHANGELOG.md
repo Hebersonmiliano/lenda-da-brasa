@@ -1,5 +1,8 @@
 # Novidades — Lenda da Brasa
 
+## v1.7.1 — Menu de itens arrumado
+- O menu de itens mostra só os **12 itens que existem no jogo**, em 3 fileiras de 4. Os 8 espaços cinza que nunca podiam ser pegos foram tirados.
+
 ## v1.7 — Luz da espada no jogo todo
 - Com a **Espada dos Reinos**, a **luz carregada** funciona em qualquer lugar do jogo, não só no Abismo: segure o ataque até a barrinha encher e solte para disparar 8 raios de luz.
 - Um dos raios sai mirando o inimigo mais perto e o persegue de leve.
