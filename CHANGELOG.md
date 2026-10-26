@@ -1,5 +1,8 @@
 # Novidades — Lenda da Brasa
 
+## v1.6.2 — A luz fere o chefe final
+- A **luz carregada** agora fere a **Sombra do Rei em qualquer fase**, não só na final. As chamas e os itens continuam funcionando como antes, para quem preferir.
+
 ## v1.6.1 — Luz carregada mais fácil
 - Ao segurar o ataque no Abismo, aparece uma **barrinha de carga** sobre o herói; quando enche, ele brilha e surge o aviso **"LUZ CARREGADA! SOLTE O BOTÃO"**.
 - Um dos 8 raios agora sai **sempre mirando a Sombra do Rei**, então não é mais preciso ficar alinhado com ela.

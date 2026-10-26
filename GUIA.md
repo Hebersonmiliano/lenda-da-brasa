@@ -332,7 +332,7 @@ Cada sala é um **eco** de um lugar por onde você passou, tingido de roxo. A ba
 
 ### A Sombra do Rei — batalha final
 
-A luta tem **3 fases**; as marcas douradas na barra de vida mostram onde cada uma termina.
+A luta tem **3 fases**; as marcas douradas na barra de vida mostram onde cada uma termina. Em **qualquer fase**, a **luz carregada** (segure o ataque e solte) fere a Sombra.
 
 1. **Luz.** A Sombra é quase invisível e a espada a atravessa. Acenda as **4 chamas** dos cantos com o Bastão de Brasa: ela aparece por alguns segundos. Golpeie até ela engolir a luz e repita.
 2. **Elementos.** A cada 5 segundos ela muda de forma. O item certo vai **sozinho para o botão B**: aperte B para desfazer a forma e então ataque com a espada:
