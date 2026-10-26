@@ -1,5 +1,9 @@
 # Novidades — Lenda da Brasa
 
+## v1.6.3 — A carga não se perde
+- Segurando o ataque no Abismo, a **luz carregada não se perde** se você levar um golpe, pular com a Pena ou for empurrado. Só soltar o botão dispara (ou cancela, se ainda não encheu).
+- O raio que mira a **Sombra do Rei** agora a **persegue de leve**, então acerta mesmo quando ela está se movendo.
+
 ## v1.6.2 — A luz fere o chefe final
 - A **luz carregada** agora fere a **Sombra do Rei em qualquer fase**, não só na final. As chamas e os itens continuam funcionando como antes, para quem preferir.
 
