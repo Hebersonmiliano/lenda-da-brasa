@@ -1,5 +1,10 @@
 # Novidades — Lenda da Brasa
 
+## v1.7 — Luz da espada no jogo todo
+- Com a **Espada dos Reinos**, a **luz carregada** funciona em qualquer lugar do jogo, não só no Abismo: segure o ataque até a barrinha encher e solte para disparar 8 raios de luz.
+- Um dos raios sai mirando o inimigo mais perto e o persegue de leve.
+- Os chefes continuam com suas fraquezas próprias: a luz não pula os desafios deles (exceto a Sombra do Rei).
+
 ## v1.6.3 — A carga não se perde
 - Segurando o ataque no Abismo, a **luz carregada não se perde** se você levar um golpe, pular com a Pena ou for empurrado. Só soltar o botão dispara (ou cancela, se ainda não encheu).
 - O raio que mira a **Sombra do Rei** agora a **persegue de leve**, então acerta mesmo quando ela está se movendo.
