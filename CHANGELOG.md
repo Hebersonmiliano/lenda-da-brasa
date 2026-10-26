@@ -1,5 +1,9 @@
 # Novidades — Lenda da Brasa
 
+## v1.7.2 — Ações sem espaços vazios
+- O quadro de **AÇÕES** mostra só o que existe: LER, FALAR, PUXAR e CORRER. Saíram ERGUER e NADAR, que dependiam de Luvas e Pés de Pato que nunca existiram no jogo.
+- CORRER continua: ele acende quando você compra as **Botas Ligeiras** com a Ferreira Brígida, na Vila de Conchas.
+
 ## v1.7.1 — Menu de itens arrumado
 - O menu de itens mostra só os **12 itens que existem no jogo**, em 3 fileiras de 4. Os 8 espaços cinza que nunca podiam ser pegos foram tirados.
 
