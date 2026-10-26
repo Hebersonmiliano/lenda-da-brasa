@@ -1,5 +1,10 @@
 # Novidades — Lenda da Brasa
 
+## v1.6.1 — Luz carregada mais fácil
+- Ao segurar o ataque no Abismo, aparece uma **barrinha de carga** sobre o herói; quando enche, ele brilha e surge o aviso **"LUZ CARREGADA! SOLTE O BOTÃO"**.
+- Um dos 8 raios agora sai **sempre mirando a Sombra do Rei**, então não é mais preciso ficar alinhado com ela.
+- No celular, o botão A não "solta" mais sozinho quando o dedo escorrega um pouco.
+
 ## v1.6 — Chefe final mais justo
 - **Sombra do Rei, fase 2:** quando ela muda de forma, o item certo vai **sozinho para o botão B**. Nada de abrir o menu no meio da luta: é só apertar B e depois a espada.
 - Na fase final, a **Pena** também vai sozinha para o botão B, para pular as ondas sombrias.

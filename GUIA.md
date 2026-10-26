@@ -341,7 +341,7 @@ A luta tem **3 fases**; as marcas douradas na barra de vida mostram onde cada um
    - **Alada:** Gancho
    - **Blindada:** Martelo
    - **Olho:** Flecha
-3. **Final.** O chão desaba e sobram ilhas de pedra. Só a **luz carregada** fere: **segure o botão de ataque** até a espada brilhar e solte para disparar 8 raios de luz. Pule as **ondas sombrias** com a **Pena** (ela já vai para o botão B) e não caia nos buracos entre as ilhas.
+3. **Final.** O chão desaba e sobram ilhas de pedra. Só a **luz carregada** fere: **segure o botão de ataque** até a barrinha encher e aparecer "LUZ CARREGADA! SOLTE O BOTÃO", e solte para disparar 8 raios de luz. Um deles sempre sai mirando a Sombra. Pule as **ondas sombrias** com a **Pena** (ela já vai para o botão B) e não caia nos buracos entre as ilhas.
 
 ![Fase 1: as chamas revelam a Sombra](guia/50_sombra_fase1.png)
 
